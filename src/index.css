@@ -19,6 +19,14 @@
 
 }
 
+.sw{
+  @apply container mx-auto px-6 py-[50px]
+}
+
+.c1{
+  @apply bg-[#8F03FF]
+}
+
 
 
 
@@ -58,7 +66,7 @@
   }
 
   .g8 {
-    background: linear-gradient(to right, transparent, #2ef2ff, transparent);
+    background: linear-gradient(to right, transparent, #cac9ff, transparent);
   }
 
   .g9 {

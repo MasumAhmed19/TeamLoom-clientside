@@ -6,7 +6,7 @@ const Header = () => {
   const { user, logOut } = useAuth();
 
   const menus = (
-    <div className="flex gap-5 text-lg f1">
+    <div className="flex gap-5 text-2xl f2">
       <div className="group relative inline-block">
         <NavLink
           className="navlink"
