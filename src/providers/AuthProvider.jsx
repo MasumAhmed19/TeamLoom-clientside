@@ -11,7 +11,7 @@ import {
     updateProfile,
   } from 'firebase/auth'
 
-const AuthContext = createContext(null)
+export const AuthContext = createContext(null)
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider();
 

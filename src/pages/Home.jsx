@@ -3,7 +3,9 @@ import React from 'react';
 const Home = () => {
     return (
         <div>
-          <h2>Home page</h2>  
+          <div className='container mx-auto'>
+            <h2>Home page</h2>  
+          </div>
         </div>
     );
 };

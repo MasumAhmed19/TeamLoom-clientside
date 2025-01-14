@@ -1,3 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.f1{
+  font-family: "Ubuntu", serif;
+}
+
+.f2 {
+  font-family: "Jersey 15", serif;
+}
+
+
+.navlink{
+
+}
+
+
+
+
+
+
+
+
+
+
+/* gradient */
+.g1 {
+    background: linear-gradient(rgba(196, 203, 245, 0.5), transparent);
+  }
+
+  .g2 {
+    background: linear-gradient(#3062a3, #19549f);
+  }
+
+  .g3 {
+    background: linear-gradient(#3c52d9, #0c1838);
+  }
+
+  .g4 {
+    background: linear-gradient(#253575, #162561);
+  }
+
+  .g5 {
+    background: linear-gradient(#334679, #162561);
+  }
+
+  .g6 {
+    background: linear-gradient(#334679, #0c1838);
+  }
+
+  .g7 {
+    background: linear-gradient(#1b275a, #0e1434);
+  }
+
+  .g8 {
+    background: linear-gradient(to right, transparent, #2ef2ff, transparent);
+  }
+
+  .g9 {
+    background: linear-gradient(#080d27, transparent);
+  }
+
+  
+.g10 {
+    background: linear-gradient(to right, transparent, #ECE5FE, transparent);
+  }
+  
+  .g11 {
+    background: linear-gradient(to right, #ECE5FE, transparent, #ECE5FE);
+  }
+  
+  .g12 {
+    background: linear-gradient(#ECE5FE, transparent);
+  }
+  
+  .g13 {
+    background:  radial-gradient(#ECE5FE, transparent)
+  }
+  
+  .g14 {
+    background: linear-gradient(transparent, #ECE5FE);
+  }
+  
+  
