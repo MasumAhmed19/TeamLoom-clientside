@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import Contact from '../pages/Contact'
 import Login from '../pages/Auth/Login'
 import SignUp from '../pages/Auth/SignUp'
+import Dashboard from '../pages/Dashboard/Dashboard'
 
 export const router = createBrowserRouter([
     {
@@ -26,5 +27,13 @@ export const router = createBrowserRouter([
     },{
         path:'/signup',
         element:<SignUp />
+    },{
+        path:'/dashboard',
+        element:<Dashboard />,
+        children:[
+            {
+                
+            }
+        ]
     }
 ])

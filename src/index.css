@@ -27,6 +27,10 @@
   @apply bg-[#8F03FF]
 }
 
+.btn1{
+  @apply mt-4 px-6 py-2 c1 uppercase text-white rounded-sm f1
+}
+
 
 
 

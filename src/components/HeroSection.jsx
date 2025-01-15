@@ -19,7 +19,7 @@ const HeroSection = () => {
                         and admins collaborate—effortlessly.
                     </p>
                     {/* Button */}
-                    <Link className="mt-4 px-6 py-2 c1 uppercase text-white rounded-sm f1">
+                    <Link className="btn1">
                         Get Started
                     </Link>
                 </div>

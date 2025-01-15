@@ -13,7 +13,6 @@ const Login = () => {
       navigate('/');
       setUser(res.user);
       toast.success('Login Successful')
-      
     }catch (err){
       console.log(err)
       toast.error('Login unsuccessful')

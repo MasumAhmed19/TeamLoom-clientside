@@ -4,6 +4,9 @@ const Home = () => {
     return (
         <div className=''>
             <HeroSection />
+            <section className="min-h-screen">
+
+            </section>
         </div>
     );
 };
