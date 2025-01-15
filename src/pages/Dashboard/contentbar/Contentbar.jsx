@@ -4,7 +4,7 @@ import SearchBar from "../../../components/SearchBar";
 
 const Contentbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-5 min-h-screen">
+    <div className="bg-white rounded-lg shadow-lg p-5 h-[calc(100vh-32px)]">
       {/* Search Bar */}
       <SearchBar
         isSidebarOpen={isSidebarOpen}

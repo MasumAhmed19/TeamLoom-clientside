@@ -6,7 +6,7 @@ const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-[240px_1fr] gap-4 p-2 md:p-4 bg-gray-50 min-h-screen">
+    <div className="flex flex-col md:grid md:grid-cols-[240px_1fr] gap-4 p-2 md:p-4 bg-[#F5F5F4] min-h-screen">
       {/* Sidebar */}
       <div
         className={`fixed inset-0 z-20 transform ${

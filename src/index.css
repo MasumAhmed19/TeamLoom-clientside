@@ -32,6 +32,10 @@
 }
 
 
+.active{
+  @apply bg-gray-100 rounded-sm
+}
+
 
 
 
