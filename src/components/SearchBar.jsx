@@ -1,23 +1,31 @@
 import {  IoMdSearch } from "react-icons/io";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
-
-
+import { RiMenuUnfoldFill } from "react-icons/ri";
 import useAuth from "../hooks/useAuth";
 import { Dropdown, DropdownItem } from "flowbite-react";
 import { Link } from "react-router-dom";
 
 
-const SearchBar = () => {
+const SearchBar = ({isSidebarOpen,setIsSidebarOpen}) => {
   const { user, logOut } = useAuth();
 
   return (
-    <div className="flex items-center justify-between">
-      <div className="w-1/3">
-        <div className="border flex hover:border-slate-400 cursor-pointer transition-all duration-200 h-10 items-center justify-between p-3 rounded-md">
+    <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center gap-3 w-full md:w-1/3">
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-xl text-white bg-purple-600 rounded-lg"
+          onClick={() => setIsSidebarOpen(true)}
+        >
+          <RiMenuUnfoldFill />
+        </button>
+
+        {/* Search Input */}
+        <div className="border flex hover:border-slate-400 cursor-pointer transition-all duration-200 h-9 md:h-10 items-center justify-between p-3 rounded-md w-full">
           <div className="flex items-center gap-2">
             <IoMdSearch />
-            <p className="text-slate-400">Search on page</p>
+            <p className="text-slate-400 ">Search </p>
           </div>
           <kbd className="kbd kbd-xs">ctrl+K</kbd>
         </div>
@@ -29,7 +37,7 @@ const SearchBar = () => {
         <Dropdown
           inline={true}
           label={
-            <div className='bg-slate-200 p-2 rounded-md'>
+            <div className='bg-gray-200 p-2 rounded-md'>
               <IoNotificationsSharp className="text-xl" />
             </div>
           }
@@ -39,8 +47,8 @@ const SearchBar = () => {
           className=""
 
         >
-            <div className="px-4">
-                <div className="p-3 flex items-center justify-between w-[350px]">
+            <div className="px-2 md:px-4">
+                <div className="p-3 flex items-center justify-between w-[280px] md:w-[350px]">
                         <h2 className="text-md font-semibold">Notifications</h2>
                         <h2 className='text-xs text-slate-400 flex items-center gap-1 cursor-pointer'><MdCheckBoxOutlineBlank /> Mark all as read</h2>
                 </div>
@@ -134,7 +142,7 @@ const SearchBar = () => {
                 referrerPolicy="no-referrer"
                 src={`${user?.photoURL}`}
                 alt="User"
-                className="w-10 rounded-full cursor-pointer"
+                className="w-16 md:w-10 rounded-full cursor-pointer"
               />
             </div>
           }
