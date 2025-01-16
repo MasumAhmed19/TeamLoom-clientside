@@ -45,6 +45,10 @@
 }
 
 
+.tag-highlight{
+  @apply flex items-center gap-1 bg-[#e9d8ff] text-[#7201FF] px-1 rounded-full
+}
+
 
 
 

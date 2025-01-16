@@ -137,12 +137,12 @@ const SearchBar = ({isSidebarOpen,setIsSidebarOpen}) => {
         <Dropdown
           inline={true}
           label={
-            <div>
+            <div className="w-10 h-10">
               <img
                 referrerPolicy="no-referrer"
                 src={`${user?.photoURL}`}
                 alt="User"
-                className="w-16 h-16 md:h-10 md:w-10 object-cover rounded-full cursor-pointer"
+                className="h-10 w-10 object-cover rounded-full cursor-pointer"
               />
             </div>
           }

@@ -9,7 +9,7 @@ const Dashboard = () => {
     <div className="flex flex-col md:grid md:grid-cols-[240px_1fr] gap-4 p-2 md:p-4 bg-[#F5F5F4] min-h-screen">
       {/* Sidebar */}
       <div
-        className={`fixed inset-0 z-20 transform ${
+        className={`fixed inset-y-0 z-20 transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 md:relative md:inset-auto transition-transform duration-300 ease-in-out bg-white shadow-lg md:shadow-none`}
       >
@@ -38,3 +38,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+

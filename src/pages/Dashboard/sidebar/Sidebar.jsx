@@ -37,7 +37,7 @@ const Sidebar = ({ onClose }) => {
 
 
     return (
-      <div className="overflow-y-auto h-full p-5 text-black  bg-white rounded-lg relative">
+      <div className="overflow-y-auto h-full p-5 text-black md:w-[300px] bg-white rounded-lg ">
         {/* ei div only mobile e show krbe Close Button for Mobile */}
         <div className="flex justify-between items-center md:hidden mb-4">
           <Link to='/' className="flex items-center gap-2 w-full">
@@ -64,9 +64,11 @@ const Sidebar = ({ onClose }) => {
                     </Link>
                 </div> */}
 
-                <div className="flex gap-1 items-center ">
-                    <img src={`${user?.photoURL}`} alt="" className="w-8 h-8 object-cover rounded-md"/>
-
+                <div className="flex gap-1 items-center">
+                    <div className="">
+                        <img src={`${user?.photoURL}`} alt="" className="w-10 h-10 object-cover rounded-full"/>
+                    </div>
+                    
                     <div className="flex flex-col">
                         <h2 className="text-md font-semibold">{`${user?.displayName}`}</h2>
                         <h2 className='text-xs text-slate-400'>{`${user?.email}`}</h2>

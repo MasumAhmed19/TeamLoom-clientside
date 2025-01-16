@@ -184,7 +184,7 @@ const SignUp = () => {
                 </div>
                 <div className="w-full">
                 <input
-                  type="text"
+                  type="number"
                   name="salary"
                   placeholder="Salary"
                   className="input input-bordered w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
