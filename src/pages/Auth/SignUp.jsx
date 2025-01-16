@@ -3,9 +3,9 @@ import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useState } from "react";
+import { imageUpload } from "../../api/utils";
 
-const img_hosting_key = import.meta.env.VITE_IMAGEBB_KEY;
-const img_hosting_api = `https://api.imgbb.com/1/upload?key=${img_hosting_key}`;
+
 
 const SignUp = () => {
   const {user, setUser, signInWithGoogle, createUser, updateUserProfile } = useAuth();
@@ -36,18 +36,9 @@ const SignUp = () => {
     const password = form.password.value;
     const profileFile = form.profileURL.files[0]; 
 
-    // img file object create
-    const imgFile = {image: profileFile} 
-
     try {
-
-      const imgRes = await axios.post(img_hosting_api, imgFile, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      const profileURL = imgRes.data.data.url;  
+      const profileURL = await imageUpload(profileFile);  
+      console.log(profileURL)
 
       const newUserData = {
         name,
@@ -62,7 +53,7 @@ const SignUp = () => {
 
       console.log(newUserData);
 
-      const createUserRes = await createUser(email, password);
+      const createUserRes = await createUser(email, password)
 
       try {
         await updateUserProfile(name, profileURL);
@@ -208,6 +199,7 @@ const SignUp = () => {
                   type="file"
                   name="profileURL"
                   placeholder="Profile photo"
+                  accept="image/*"
                   className="file-input file-input-bordered file-input-xs w-full max-w-lg h-10"
                 />
               </div>
