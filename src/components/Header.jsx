@@ -19,38 +19,38 @@ const Header = () => {
   const menus = (
     <div className="flex flex-col lg:flex-row gap-5 text-2xl f2">
       <div className="group relative inline-block">
-        <NavLink className="" to="/">
+        <Link className="" to="/">
           home
-        </NavLink>
+        </Link>
         <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-11/12"></span>
       </div>
 
       <div className="group relative inline-block">
-        <NavLink className="" to="/contact">
+        <Link className="" to="/contact">
           contact
-        </NavLink>
+        </Link>
         <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-11/12"></span>
       </div>
 
       <div className="group relative inline-block">
-        <NavLink className="" to="/dashboard">
+        <Link className="" to="/dashboard">
           dashboard
-        </NavLink>
+        </Link>
         <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-11/12"></span>
       </div>
 
       {user ? (
         <div onClick={logOut} className="group relative inline-block">
-          <NavLink className="navlink" to="/">
+          <Link className="" to="/">
             logout
-          </NavLink>
+          </Link>
           <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-11/12"></span>
         </div>
       ) : (
         <div className="group relative inline-block">
-          <NavLink className="navlink" to="/login">
+          <Link className="" to="/login">
             login
-          </NavLink>
+          </Link>
           <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-11/12"></span>
         </div>
       )}

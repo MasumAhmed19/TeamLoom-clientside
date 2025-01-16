@@ -64,8 +64,7 @@ const Sidebar = ({ onClose }) => {
                     </Link>
                 </div> */}
 
-
-                <div className="flex gap-1 items-center justify-center">
+                <div className="flex gap-1 items-center ">
                     <img src={`${user?.photoURL}`} alt="" className="w-8 h-8 object-cover rounded-md"/>
 
                     <div className="flex flex-col">
@@ -77,23 +76,21 @@ const Sidebar = ({ onClose }) => {
                 
                     {admin.map((item) => (
                         <li key={item.path}>
-                        <NavLink to={item.path} className="flex items-center gap-1 text-md p-1">
+                        <NavLink to={item.path} onClick={onClose} className="flex text-sm items-center gap-1 text-md p-1 text-gray-500">
                             {item.icon} {item.name}
                         </NavLink>
                         </li>
                     ))}
 
-                        <NavLink to='/'className="flex items-center gap-1 text-md p-1" onClick={logOut}><RiLogoutBoxFill /> Logout</NavLink>
+                        <NavLink to='/'className="flex items-center gap-1 text-md p-1 text-gray-500" onClick={logOut}><RiLogoutBoxFill /> Logout</NavLink>
                 </ul>
             </div>
             
-            <div className="absolute bottom-5 flex justify-between w-[calc(100vw-32px)] md:w-4/5">
+            <div className="hidden md:flex absolute bottom-5  justify-between w-[calc(100vw-32px)] md:w-4/5">
                     <Link to='/' className="flex items-center gap-2 w-full">
                         <img src="https://i.ibb.co.com/6H7FBtf/logo.png" alt="" className="w-8"/>
                         <h2 className="f2 text-3xl">TeamLoom</h2>
                     </Link>
-
-                
             </div>
         </div>
       </div>

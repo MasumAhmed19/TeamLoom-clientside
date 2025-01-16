@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa6";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
+import axios from 'axios';
 
 const SignUp = () => {
   const { user, setUser, signInWithGoogle, createUser, updateUserProfile } =
@@ -21,7 +22,7 @@ const SignUp = () => {
       });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -46,7 +47,9 @@ const SignUp = () => {
         updateUserProfile(name, profileURL)
           .then(() => {
             console.log("user profile updated")
-            navigate("/");
+            const result = axios.post(`${import.meta.env.VITE_API_URL}/add-user`, newUserData);
+
+            navigate("/dashboard");
             toast.success('Successfully SignUp')
           })
           .catch((err) => {
