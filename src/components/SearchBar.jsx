@@ -142,7 +142,7 @@ const SearchBar = ({isSidebarOpen,setIsSidebarOpen}) => {
                 referrerPolicy="no-referrer"
                 src={`${user?.photoURL}`}
                 alt="User"
-                className="w-16 md:w-10 rounded-full cursor-pointer"
+                className="w-16 h-16 md:h-10 md:w-10 object-cover rounded-full cursor-pointer"
               />
             </div>
           }
@@ -160,7 +160,7 @@ const SearchBar = ({isSidebarOpen,setIsSidebarOpen}) => {
                 <hr className="my-2" />
                 <DropdownItem>Dashboard</DropdownItem>
                 <DropdownItem>Settings</DropdownItem>
-                <DropdownItem><Link to='/' onClick={logOut}>Sign out</Link></DropdownItem>
+                <DropdownItem onClick={logOut}><Link to='/' >Sign out</Link></DropdownItem>
             </div>
         </Dropdown>
       </div>

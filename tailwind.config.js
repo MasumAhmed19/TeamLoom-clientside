@@ -10,7 +10,8 @@ export default {
     extend: {
       color:{
         c1: '#8C52FF',
-        c2: '#8F03FF'
+        c2: '#8F03FF',
+        c3: '#7201FF'
       }
     },
   },

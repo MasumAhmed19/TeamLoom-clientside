@@ -23,17 +23,25 @@
   @apply container mx-auto px-6 py-[50px]
 }
 
-.c1{
+/* .c1{
   @apply bg-[#8F03FF]
+} */
+.btn1{
+  @apply mt-4 px-6 py-2 bg-[#8F03FF] uppercase text-white rounded-sm f1
 }
 
-.btn1{
-  @apply mt-4 px-6 py-2 c1 uppercase text-white rounded-sm f1
+.btn2{
+  @apply mt-4 px-6 py-2 bg-[#8F03FF] text-white rounded-md f1 w-full
 }
+
 
 
 .active{
   @apply bg-[#F5F5F4] rounded-sm text-[#8C52FF]
+}
+
+.link-highlight{
+  @apply bg-[#7201FF] text-white p-[1px] rounded-sm
 }
 
 

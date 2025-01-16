@@ -63,23 +63,16 @@ const Login = () => {
             <h4 className="text-center text-xl font-semibold mb-2">Welcome back to TeamLoom</h4>
             <h5 className="text-center text-[#8b8c8f] mb-6">
               Don't have an account?{" "}
-              <Link to="/signup" className="text-[#7201FF]">
+              <Link to="/signup" className="link-highlight">
                 Sign up for free
               </Link>
             </h5>
 
-            {/* Google Login */}
-            <div
-              className="flex items-center justify-center border px-4 py-3 rounded-md mb-6 cursor-pointer hover:bg-gray-100 transition-all"
-              onClick={handleGoogleLogin}
-            >
-              <FaGoogle className="mr-2" />
-              <span>Log in with Google</span>
-            </div>
+            
 
             {/* Email Login Form */}
             <form className="space-y-4" onSubmit={handleSubmit}>
-              <h5 className="text-center text-sm">or Log in with email:</h5>
+              <h5 className="text-center text-sm">Log in with email</h5>
 
               <div className="form-control">
                 <input
@@ -103,7 +96,7 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="w-full py-2 c1 text-white rounded-md f1"
+                className="btn2"
               >
                 Log in
               </button>
@@ -114,6 +107,17 @@ const Login = () => {
               <Link to="/" className="text-[#7201FF] hover:underline">
                 Forgot your password?
               </Link>
+            </div>
+
+
+            {/* Google Login */}
+            <hr className="my-5"/>
+            <div
+              className=" mt-8 flex items-center justify-center border px-4 py-3 rounded-md mb-6 cursor-pointer hover:bg-gray-50 transition-all"
+              onClick={handleGoogleLogin}
+            >
+              <img src="https://i.ibb.co.com/L8Z03cz/google-icon.png" alt="" className="w-6" />
+              <span>Log in with Google</span>
             </div>
           </div>
         </div>
