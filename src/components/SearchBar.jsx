@@ -12,7 +12,7 @@ const SearchBar = ({isSidebarOpen,setIsSidebarOpen}) => {
 
   return (
     <div className="flex items-center justify-between gap-2">
-      <div className="flex items-center gap-3 w-full md:w-1/3">
+      <div className="flex items-center gap-3 w-full md:w-2/3 lg:w-1/2">
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 text-xl text-white bg-purple-600 rounded-lg"

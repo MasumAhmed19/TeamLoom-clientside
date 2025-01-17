@@ -58,7 +58,6 @@ const AuthProvider = ({ children }) => {
 
             const userData = {
               bank_account:'222351035745',
-              role: 'employee',
               designaion: 'saleAssistant',
               salary: '45000'
             }
