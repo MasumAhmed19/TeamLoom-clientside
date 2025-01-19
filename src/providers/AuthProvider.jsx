@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-user/${currentUser?.email}`,
               {
                 name: currentUser?.displayName,
-                image: currentUser?.photoURL,
+                profileURL: currentUser?.photoURL,
                 email: currentUser?.email,
                 ...userData
               }

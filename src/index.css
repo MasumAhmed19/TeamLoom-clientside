@@ -15,10 +15,6 @@
 }
 
 
-.navlink{
-
-}
-
 .sw{
   @apply container mx-auto px-6 py-[50px]
 }
@@ -42,6 +38,10 @@
 
 .link-highlight{
   @apply bg-[#7201FF] text-white p-[1px] rounded-sm
+}
+
+.highlight1{
+  @apply bg-[#ebd9ff] text-[#7201FF] px-[10px] py-[1px] rounded-full
 }
 
 

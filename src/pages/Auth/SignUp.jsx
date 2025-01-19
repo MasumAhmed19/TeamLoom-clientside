@@ -60,7 +60,7 @@ const SignUp = () => {
         console.log("User profile updated");
 
         const result = await axios.post(
-          `${import.meta.env.VITE_API_URL}/add-user`,
+          `${import.meta.env.VITE_API_URL}/add-user/${email}`,
           newUserData
         );
 
@@ -156,10 +156,10 @@ const SignUp = () => {
                     >
                       Designation
                     </option>
-                    <option value="salesAssistant">Associate HR</option>
-                      <option value="salesAssistant">Sales Assistant</option>
-                      <option value="socialMediaExecutive">Social Media executive</option>
-                      <option value="digitalMarketer">Digital Marketer</option>       
+                    <option value="Associate HR">Associate HR</option>
+                      <option value="Sales Assistant">Sales Assistant</option>
+                      <option value="Social Media executive">Social Media executive</option>
+                      <option value="Digital Marketer">Digital Marketer</option>       
                   </select>
                 </div>
               </div>
