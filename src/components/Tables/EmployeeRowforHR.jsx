@@ -2,7 +2,7 @@ import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
-const EmployeeRowforHR = ({ singlaData, idx }) => {
+const EmployeeRowforHR = ({ singlaData, idx, fetchEmployeeDataByQuery }) => {
   const { user } = useAuth();
   const {
     _id,

@@ -20,11 +20,12 @@ const EmployeeListTableAdmin = () => {
         console.error("error--->", err);
       }
     };
+  
 
     fetchEmployeeDataByQuery();
   }, [user?.email, role]);
 
-  console.log(employees);
+
 
   return (
     <div>

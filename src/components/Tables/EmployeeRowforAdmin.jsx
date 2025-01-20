@@ -3,10 +3,9 @@ import { GiCheckMark } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import useEmployeeDet from "../../hooks/useEmployeeDet";
 import useAuth from "../../hooks/useAuth";
-import { MdOutlineClose } from "react-icons/md";
 
 
-const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjustFire, handleAdjusMakeHR, handleDetail }) => {
+const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjustFire, handleAdjustMakeHR, handleDetail }) => {
   const { user } = useAuth();
   const {
     _id,
@@ -79,11 +78,12 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
           Fire
         </button>
       </td>
+
       <td>
         {role === "employee" ? (
           <button
             className="highlight1"
-            onClick={() => handleAdjusMakeHR(_id)}
+            onClick={() => handleAdjustMakeHR(_id)}
           >
             Make HR
           </button>
@@ -102,8 +102,7 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
           Detail<FaSquareArrowUpRight />
         </button>
       </td>
-      {/* modals */}
-      
+ 
     </tr>
   );
 };
