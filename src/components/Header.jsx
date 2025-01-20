@@ -132,12 +132,15 @@ const Header = () => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link to="/dashboard" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
-                <FaTachometerAlt />
-                Dashboard
-              </Link>
-            </li>
+            {
+              user &&
+                <li>
+                  <Link to="/dashboard" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
+                    <FaTachometerAlt />
+                    Dashboard
+                  </Link>
+                </li>
+            }
             <li>
               <Link to="/contact" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
                 <FaAddressCard />
@@ -152,24 +155,33 @@ const Header = () => {
             </li>
 
             {/* Conditional Login/Logout */}
-            <li>
-              <Link to="/login" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
-                <FaSignInAlt />
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
-                <FaUserPlus />
-                Signup
-              </Link>
-            </li>
-            <li>
-              <Link to="/logout" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md text-red-400">
-                <FaSignOutAlt />
-                Logout
-              </Link>
-            </li>
+            {
+              !user && (
+                <>
+                  <li>
+                    <Link to="/login" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
+                      <FaSignInAlt />
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/signup" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
+                      <FaUserPlus />
+                      Signup
+                    </Link>
+                  </li>
+                </>
+              )
+            }
+            {
+              user && 
+              <li>
+                <Link to="/" onClick={logOut} className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md text-red-400">
+                  <FaSignOutAlt />
+                  Logout
+                </Link>
+              </li>
+            }
           </ul>
         </div>
       </div>

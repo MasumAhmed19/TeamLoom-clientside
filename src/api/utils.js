@@ -12,8 +12,8 @@ export const imageUpload = async (imgData)=>{
 }
 
 export const getAllEmployee = async (role="")=>{
-    const data = await axios.get(`${import.meta.env.VITE_API_URL}/employee?role=${role}`)
-    return data.data[0]
+    const data = await axios.get(`${import.meta.env.VITE_API_URL}/all-employee?role=${role}`)
+    return data
 }
 
 

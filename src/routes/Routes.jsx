@@ -11,9 +11,9 @@ import Profile from '../pages/Dashboard/contentbar/Profile'
 import Task from '../pages/Dashboard/contentbar/Task'
 import PaymentHistory from '../pages/Dashboard/contentbar/PaymentHistory'
 import Notifications from '../pages/Dashboard/contentbar/Notifications'
-import EmployeList from '../pages/Dashboard/contentbar/EmployeList'
 import Progress from '../pages/Dashboard/contentbar/Progress'
 import Payroll from '../pages/Dashboard/contentbar/Payroll'
+import EmployeeList from '../pages/Dashboard/contentbar/EmployeeList'
 
 export const router = createBrowserRouter([
     {
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
             },{
                 // admin + hr 
                 path:'/dashboard/employee-list',
-                element:<EmployeList  />
+                element:<EmployeeList  />
             },{
                 // hr 
                 path:'/dashboard/progress',

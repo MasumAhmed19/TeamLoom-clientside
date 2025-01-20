@@ -27,7 +27,7 @@ const Login = () => {
     const password = form.password.value;
     signIn(email, password)
         .then((res)=>{
-            navigate('/');
+            navigate('/dashboard/profile');
             setUser(res.user);
             toast.success('Login Successful')
 

@@ -35,6 +35,8 @@ const SignUp = () => {
     const salary = form.salary.value;
     const password = form.password.value;
     const profileFile = form.profileURL.files[0]; 
+    const makeHR= role==='hr'; 
+    const isFire= false
 
     try {
       const profileURL = await imageUpload(profileFile);  
@@ -49,6 +51,8 @@ const SignUp = () => {
         salary,
         profileURL,
         password,
+        makeHR,
+        isFire
       };
 
       console.log(newUserData);
@@ -56,12 +60,12 @@ const SignUp = () => {
       const createUserRes = await createUser(email, password)
 
       try {
-        await updateUserProfile(name, profileURL);
-        console.log("User profile updated");
+        await updateUserProfile(name, profileURL)
+        console.log("User profile updated")
 
         const result = await axios.post(
           `${import.meta.env.VITE_API_URL}/add-user/${email}`,
-          newUserData
+          newUserData, { headers: { "Content-Type": "application/json" } }
         );
 
         console.log("User added to database:", result.data);
