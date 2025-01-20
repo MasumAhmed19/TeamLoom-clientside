@@ -3,6 +3,8 @@ import { GiCheckMark } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import useEmployeeDet from "../../hooks/useEmployeeDet";
 import useAuth from "../../hooks/useAuth";
+import { MdOutlineClose } from "react-icons/md";
+
 
 const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjustFire, handleAdjusMakeHR, handleDetail }) => {
   const { user } = useAuth();
@@ -95,41 +97,13 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
       <td>
         <button
           className="highlight1 flex items-center gap-2"
-          // onClick={() => handleDetail(_id)}
-          onClick={() => document.getElementById("modal_detail").showModal(_id)}
+          onClick={() => handleDetail(_id)}
         >
-          Details <FaSquareArrowUpRight />
+          Detail<FaSquareArrowUpRight />
         </button>
       </td>
       {/* modals */}
-      <>
-        {/* modal for detail */}
-        <dialog
-          id="modal_detail"
-          className="modal"
-        >
-          <div className="modal-box w-11/12 max-w-5xl">
-          
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">Click the button below to close {_id}</p>
-            
-            <div className="modal-action">
-              <form method="dialog">
-                {/* if there is a button, it will close the modal */}
-                <button
-                  className="btn"
-                  onClick={() => handleDetail(_id)}
-                >
-                  Delete
-                </button>
-                <button className="btn">Cancel</button>
-              </form>
-            </div>
-
-
-          </div>
-        </dialog>
-      </>
+      
     </tr>
   );
 };
