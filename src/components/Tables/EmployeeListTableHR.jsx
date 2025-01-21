@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { getAllEmployee } from "../../api/utils";
 import useAuth from "../../hooks/useAuth";
-import useEmployeeDet from "../../hooks/useEmployeeDet";
 import EmployeeRowforHR from "./EmployeeRowforHR";
 
 const EmployeeListTableAdmin = () => {
   const { user } = useAuth();
   const [employees, setEmployees] = useState([]);
   const [role, setRole] = useState("employee");
-  const { isAdmin, isHR, isEmployee, loading } = useEmployeeDet(user?.email);
 
   // role wise render koraite hbe
   useEffect(() => {

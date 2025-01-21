@@ -1,7 +1,6 @@
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { GiCheckMark } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import useEmployeeDet from "../../hooks/useEmployeeDet";
 import useAuth from "../../hooks/useAuth";
 
 
@@ -17,8 +16,6 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
     salary,
     profileURL,
   } = singlaData || {};
-  const { isAdmin } = useEmployeeDet(user?.email);
-
 
   return (
     <tr className="hover:bg-purple-50 transition-all duration-200">

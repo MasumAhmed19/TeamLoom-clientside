@@ -5,13 +5,9 @@ import { RiMenuUnfoldFill } from "react-icons/ri";
 import useAuth from "../hooks/useAuth";
 import { Dropdown, DropdownItem } from "flowbite-react";
 import { Link } from "react-router-dom";
-import useEmployeeDet from "../hooks/useEmployeeDet";
 
 const SearchBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const { user, logOut } = useAuth();
-  const { isAdmin, isHR, isEmployee, loading } = useEmployeeDet(user?.email);
-
-  // console.log(loading);
 
   return (
     <div className="flex items-center justify-between gap-2">
