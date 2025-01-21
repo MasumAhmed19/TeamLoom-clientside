@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const AdjustSalary = ({ detData, refetch }) => {
   const {
@@ -16,19 +17,29 @@ const AdjustSalary = ({ detData, refetch }) => {
   const handleIncreaseSal = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const sal = form.sal.value
-    console.log(_id, sal);
+    const sal = form.sal.value;
 
     try {
-      const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/adjust-salary/${_id}`,
-        { salary: parseInt(sal) } 
-      );
+      if (parseInt(sal) < salary) {
+        toast.warn("You cannot decrease salary");
+        form.reset();
+        const modal = document.getElementById("modal_adjust_salary");
+        if (modal) modal.close();
 
-      if (response.data.modifiedCount > 0) {
-        alert("Salary updated successfully!");
-        form.reset()
-        refetch()
+      } else {
+        const response = await axios.put(
+          `${import.meta.env.VITE_API_URL}/adjust-salary/${_id}`,
+          { salary: parseInt(sal) }
+        );
+
+        if (response.data.modifiedCount > 0) {
+          toast.success("Salary updated successfully!");
+          form.reset();
+          refetch();
+          
+          const modal = document.getElementById("modal_adjust_salary");
+          if (modal) modal.close();
+        }
       }
     } catch (error) {
       console.error("Error updating salary:", error);
@@ -73,10 +84,7 @@ const AdjustSalary = ({ detData, refetch }) => {
               <span className="font-medium">Bank Account:</span>{" "}
               {bank_account || "N/A"}
             </p>
-            <form
-              
-              onSubmit={handleIncreaseSal}
-            >
+            <form onSubmit={handleIncreaseSal}>
               <div className="form-control">
                 <input
                   type="number"
@@ -92,12 +100,14 @@ const AdjustSalary = ({ detData, refetch }) => {
               >
                 Update Salary
               </button>
-              
             </form>
           </div>
-          <form method="dialog" className="px-6 py-4">
-          <button className="btn1 w-full">Close</button>
-        </form>
+          <form
+            method="dialog"
+            className="px-6 py-4"
+          >
+            <button className="btn1 w-full">Close</button>
+          </form>
         </div>
       </div>
     </dialog>
