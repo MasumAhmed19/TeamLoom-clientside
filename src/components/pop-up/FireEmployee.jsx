@@ -2,7 +2,7 @@ import axios from "axios";
 import { MdOutlineClose } from "react-icons/md";
 import { toast } from "react-toastify";
 
-const MakeHR = ({ detData, refetch }) => {
+const FireEmployee = ({ detData, refetch }) => {
     const {
       profileURL,
       name,
@@ -14,11 +14,11 @@ const MakeHR = ({ detData, refetch }) => {
       _id,
     } = detData || {};
 
-    const promoteTohr = async ()=>{
+    const toFire = async ()=>{
         try{
-            const res = await axios.put(`${import.meta.env.VITE_API_URL}/makehr/${_id}`)
+            const res = await axios.delete(`${import.meta.env.VITE_API_URL}/fire/${_id}`)
             refetch();
-            toast.success('Successfully make this employee to HR')
+            toast.success('Firing Done')
         }catch(err){
             console.log(err)
         }
@@ -26,7 +26,7 @@ const MakeHR = ({ detData, refetch }) => {
   
     return (
       <dialog
-        id="modal_makehr"
+        id="modal_fire_emp"
         className="modal"
       >
         <div className="max-w-lg mx-auto mt-10 bg-white shadow-lg rounded-lg border border-gray-200 overflow-hidden relative">
@@ -78,7 +78,7 @@ const MakeHR = ({ detData, refetch }) => {
             method="dialog"
             className="px-6 py-4"
           >
-            <button className="btn1 w-full" onClick={()=>promoteTohr()}>Promoted to HR</button>
+            <button className="btn1 w-full" onClick={()=>toFire()}>Fire</button>
           </form>
           <form
             method="dialog"
@@ -91,5 +91,5 @@ const MakeHR = ({ detData, refetch }) => {
     );
   };
   
-  export default MakeHR;
+  export default FireEmployee;
   

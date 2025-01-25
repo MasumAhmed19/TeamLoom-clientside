@@ -7,6 +7,7 @@ import EmployeeDetails from "../pop-up/EmployeeDetails";
 import MakeHR from "../pop-up/MakeHR";
 import useEmp from "../../hooks/useEmp";
 import AdjustSalary from "../pop-up/AdjustSalary";
+import FireEmployee from "../pop-up/FireEmployee";
 
 const EmployeeListTableAdmin = () => {
   const { user } = useAuth();
@@ -28,11 +29,16 @@ const EmployeeListTableAdmin = () => {
     }
   };
 
-  const handleAdjustFire = (id) => {
-    {
-      /* TODO: pop up for fire employee */
+  const handleAdjustFire = async (id) => {
+    document.getElementById("modal_fire_emp").showModal();
+    try {
+      const temp = await axios.get(
+        `${import.meta.env.VITE_API_URL}/employee/id/${id}`
+      );
+      setDetData(temp.data[0]);
+    } catch (err) {
+      console.log(err);
     }
-    console.log(id);
   };
 
   const handleAdjustMakeHR = async (id) => {
@@ -120,6 +126,7 @@ const EmployeeListTableAdmin = () => {
         <EmployeeDetails detData={detData} />
         <MakeHR detData={detData} refetch={refetch} />
         <AdjustSalary detData={detData} refetch={refetch}/>
+        <FireEmployee detData={detData} refetch={refetch}/>
       </>
     </div>
   );

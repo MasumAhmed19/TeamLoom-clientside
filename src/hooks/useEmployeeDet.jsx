@@ -32,8 +32,6 @@ const useEmployeeDet = (email) => {
         fetchDet();
     },[email, employee?.role])
 
-
-
     return {employee, isAdmin, isHR, isEmployee, loading}
 };
 

@@ -19,9 +19,7 @@ const Sidebar = ({ onClose }) => {
     },
     { name: "Payroll", path: "/dashboard/payroll", icon: <RiDashboardFill /> },
     {
-      name: "Notifications",
-      path: "/dashboard/notifications",
-      icon: <RiDashboardFill />,
+      name: "Notifications", path: "/dashboard/notifications", icon: <RiDashboardFill />,
     },
   ];
 
@@ -57,7 +55,6 @@ const Sidebar = ({ onClose }) => {
       path: "/dashboard/payment-history",
       icon: <RiDashboardFill />,
     },
-    { name: "Payroll", path: "/dashboard/payroll", icon: <RiDashboardFill /> },
     {
       name: "Notifications",
       path: "/dashboard/notifications",
@@ -125,7 +122,7 @@ const Sidebar = ({ onClose }) => {
             </div>
           </div>
           <ul className="space-y-3 ">
-            {admin.map((item) => (
+            {employee.map((item) => (
               <li key={item.path}>
                 <NavLink
                   to={item.path}
