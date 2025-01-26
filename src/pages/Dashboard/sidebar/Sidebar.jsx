@@ -1,66 +1,15 @@
-import { IoCloseSharp, IoLogOut } from "react-icons/io5";
-import { RiDashboardFill } from "react-icons/ri";
-import { RiLogoutBoxFill } from "react-icons/ri";
-
+import { IoCloseSharp } from "react-icons/io5";
+import { RiLogoutBoxLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import useEmployeeDet from "../../../hooks/useEmployeeDet";
+import useRole from "../../../hooks/useRole";
+import EmployeeMenu from "./Menus/EmployeeMenu";
+import HRmenu from "./Menus/HRMenu";
+import AdminMenu from "./Menus/AdminMenu";
 
 const Sidebar = ({ onClose }) => {
   const { user, logOut } = useAuth();
-  const {isAdmin, isHR, loading} = useEmployeeDet(user?.email)
-
-  const admin = [
-    { name: "Profile", path: "/dashboard/profile", icon: <RiDashboardFill /> },
-    {
-      name: "Employee List",
-      path: "/dashboard/employee-list",
-      icon: <RiDashboardFill />,
-    },
-    { name: "Payroll", path: "/dashboard/payroll", icon: <RiDashboardFill /> },
-    {
-      name: "Notifications", path: "/dashboard/notifications", icon: <RiDashboardFill />,
-    },
-  ];
-
-  const hr = [
-    { name: "Profile", path: "/dashboard/profile", icon: <RiDashboardFill /> },
-    {
-      name: "Employee List",
-      path: "/dashboard/employee-list",
-      icon: <RiDashboardFill />,
-    },
-    {
-      name: "Payment History",
-      path: "/dashboard/payment-history",
-      icon: <RiDashboardFill />,
-    },
-    {
-      name: "Progress",
-      path: "/dashboard/progress ",
-      icon: <RiDashboardFill />,
-    },
-    {
-      name: "Notifications",
-      path: "/dashboard/notifications",
-      icon: <RiDashboardFill />,
-    },
-  ];
-
-  const employee = [
-    { name: "Profile", path: "/dashboard/profile", icon: <RiDashboardFill /> },
-    { name: "Task", path: "/dashboard/task", icon: <RiDashboardFill /> },
-    {
-      name: "Payment History",
-      path: "/dashboard/payment-history",
-      icon: <RiDashboardFill />,
-    },
-    {
-      name: "Notifications",
-      path: "/dashboard/notifications",
-      icon: <RiDashboardFill />,
-    },
-  ];
+  const  [role, isLoading] = useRole()
 
   return (
     <div className="overflow-y-auto h-full p-5 text-black md:w-[300px] bg-white rounded-lg ">
@@ -89,12 +38,6 @@ const Sidebar = ({ onClose }) => {
       {/* Sidebar Full Content */}
       <div className="space-y-5">
         <div className="flex flex-col gap-5">
-          {/* <div className="hidden md:block">
-                    <Link to='/' className="flex items-center gap-2 w-full">
-                        <img src="https://i.ibb.co.com/6H7FBtf/logo.png" alt="" className="w-8"/>
-                        <h2 className="f2 text-3xl">TeamLoom</h2>
-                    </Link>
-                </div> */}
 
           <div className="flex gap-1 items-center">
             <div className="">
@@ -108,38 +51,25 @@ const Sidebar = ({ onClose }) => {
             <div className="flex flex-col">
               <div className="flex gap-2">
                 <h2 className="text-md font-semibold">{`${user?.displayName}`}</h2>
-                {loading ? (
+                {isLoading ? (
                   <span className="loading loading-bars loading-xs"></span>
-                ) : isAdmin ? (
-                  <h2 className="tag-highlight text-xs">Admin</h2>
-                ) : isHR ? (
-                  <h2 className="tag-highlight text-xs">HR</h2>
-                ) : (
-                  <h2 className="tag-highlight text-xs">Employee</h2>
-                )}
+                ) : <h5 className="tag-highlight">{role}</h5>}
               </div>
               <h2 className="text-xs text-slate-400">{`${user?.email}`}</h2>
             </div>
           </div>
           <ul className="space-y-3 ">
-            {employee.map((item) => (
-              <li key={item.path}>
-                <NavLink
-                  to={item.path}
-                  onClick={onClose}
-                  className="flex text-sm items-center gap-1 text-md p-1 text-gray-500"
-                >
-                  {item.icon} {item.name}
-                </NavLink>
-              </li>
-            ))}
+
+            {role==='employee' && <EmployeeMenu onClose={onClose} />}
+            {role==='hr' && <HRmenu onClose={onClose} />}
+            {role==='admin' && <AdminMenu onClose={onClose} />}
 
             <NavLink
               to="/"
               className="flex items-center gap-1 text-md p-1 text-gray-500"
               onClick={logOut}
             >
-              <RiLogoutBoxFill /> Logout
+              <RiLogoutBoxLine className="text-base text-[#7250FF]" /> Logout
             </NavLink>
           </ul>
         </div>
