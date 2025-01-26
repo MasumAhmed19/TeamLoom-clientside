@@ -37,6 +37,7 @@ const SignUp = () => {
     const profileFile = form.profileURL.files[0]; 
     const makeHR= role==='hr'; 
     const isFire= false
+    const isVerifired = role==='hr'
 
     try {
       const profileURL = await imageUpload(profileFile);  
@@ -52,7 +53,8 @@ const SignUp = () => {
         profileURL,
         password,
         makeHR,
-        isFire
+        isFire,
+        isVerifired
       };
 
       console.log(newUserData);

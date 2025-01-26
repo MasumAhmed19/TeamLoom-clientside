@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useAuth from "../../../hooks/useAuth";
 import { BsThreeDots } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -9,6 +10,9 @@ const Profile = () => {
 
     return (
         <div className="mt-5 space-y-5">
+            <Helmet>
+                <title>Profile</title>
+            </Helmet>
             <div className="border p-5 rounded-lg">
                 {/* header + image and setting button */}
                 <div className="">

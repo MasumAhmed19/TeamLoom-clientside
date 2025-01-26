@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import useAuth from "../../../../../hooks/useAuth";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { MdDelete, MdEdit } from "react-icons/md";
 import TaskModal from "../../../../../components/pop-up/TaskModal";
 import { format } from "date-fns";
+import useEmployeeDet from "../../../../../hooks/useEmployeeDet";
 
 
 
@@ -17,6 +18,10 @@ const Task = () => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [currentTask, setCurrentTask] = useState(null);
+  const [userData] = useEmployeeDet();
+
+  console.log(userData.isVerified)
+
 
   const { data: tasks = [], isLoading, refetch } = useQuery({
     queryKey: ["tasks", user?.email],
@@ -36,6 +41,11 @@ const Task = () => {
     const date = format(startDate, "dd-MM-yyyy, hh:mma");
     const status = "Processing";
     const taskData = { employeeName, employeeEmail, task, hoursWorked, date, status };
+
+    if(!userData.isVerified){
+      toast.warn('Please wait till HR verify you')
+      return
+    }
 
     try {
       const result = await axios.post(`${import.meta.env.VITE_API_URL}/add-task`, taskData);
@@ -118,7 +128,12 @@ const Task = () => {
                   <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}  className="select-bordered py-3 rounded-md w-full" />
                 </div>
               </div>
-              <button type="submit" className="btn2">Add task</button>
+              {
+                 userData?.isVerified ? <button type="submit" className="btn2">Add task</button> :
+                 <button type="submit" className="btn3">Add task</button> 
+                
+              }
+              
             </form>
           </div>
         </div>
@@ -204,4 +219,3 @@ const Task = () => {
 };
 
 export default Task;
-

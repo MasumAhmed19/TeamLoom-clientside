@@ -79,7 +79,8 @@ const EmployeeListTableAdmin = () => {
               <tr>
                 <th></th>
                 <th>Name</th>
-                <th>Email</th>
+                {/* <th>Email</th> */}
+                <th>Bank Account No</th>
                 <th>
                   <select
                     className="text-xs bg-transparent border-none focus:outline-none"
@@ -96,10 +97,10 @@ const EmployeeListTableAdmin = () => {
                   </select>
                 </th>
                 <th>Designation</th>
-                <th>Bank Account No</th>
                 <th>Salary</th>
                 <th>Adjust Salary</th>
-                <th>Fire</th> <th>Make HR</th>
+                <th>Fire</th> 
+                <th>Make HR</th>
                 <th>Details</th>
               </tr>
             </thead>

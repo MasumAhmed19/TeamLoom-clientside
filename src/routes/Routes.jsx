@@ -14,6 +14,8 @@ import Notifications from '../pages/Dashboard/contentbar/Notifications'
 import Progress from '../pages/Dashboard/contentbar/Progress'
 import Payroll from '../pages/Dashboard/contentbar/Payroll'
 import EmployeeList from '../pages/Dashboard/contentbar/EmployeeList'
+import HRRoutes from './HRRoutes'
+import EmployeeRoutes from './EmployeeRoutes'
 
 export const router = createBrowserRouter([
     {
@@ -46,7 +48,7 @@ export const router = createBrowserRouter([
             },{
                 // employee
                 path:'/dashboard/task',
-                element:<Task />
+                element:<EmployeeRoutes><Task /></EmployeeRoutes>
             },{
                 // admin + hr 
                 path:'/dashboard/payment-history',
@@ -62,7 +64,7 @@ export const router = createBrowserRouter([
             },{
                 // hr 
                 path:'/dashboard/progress',
-                element:<Progress /> 
+                element:<HRRoutes><Progress /> </HRRoutes> 
             },{
                 // admin
                 path:'/dashboard/payroll',

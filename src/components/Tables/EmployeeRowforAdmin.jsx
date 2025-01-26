@@ -38,8 +38,11 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
         </div>
       </td>
 
-      <td>
+      {/* <td>
         <span className="badge badge-ghost badge-sm">{email}</span>
+      </td> */}
+      <td>
+        <span className="">{bank_account || "N/A"}</span>
       </td>
 
       <td>
@@ -50,9 +53,7 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
         <span className=" w-fit">{designation || "N/A"}</span>
       </td>
 
-      <td>
-        <span className="">{bank_account || "N/A"}</span>
-      </td>
+      
 
       <td>
         <span className="font-medium">{salary ? `$${salary}` : "N/A"}</span>

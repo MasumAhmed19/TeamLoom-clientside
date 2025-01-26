@@ -1,38 +1,21 @@
-import { useState, useEffect } from "react";
-import { getEmployeeDetail } from "../api/utils";
+import useAuth from "./useAuth";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-const useEmployeeDet = (email) => {
-    const [employee, setEmployees] = useState(null);
-    const [isAdmin, setIsAdmin]= useState(false);
-    const [isHR, setIsHR]= useState(false);
-    const [isEmployee, setIsEmployee]= useState(false);
-    const [loading, setLoading] = useState(false)
+const useEmployeeDet = () => {
+    const {user, loading} = useAuth();
 
-    useEffect(()=>{
-        const fetchDet = async ()=>{
-            try{
-                setLoading(true)
-                const info = await getEmployeeDetail(email)
-                setEmployees(info)
-                
-                if(employee?.role==='admin'){
-                    setIsAdmin(true)
-                }else if(employee?.role==='hr'){
-                    setIsHR(true)
-                }else{
-                    setIsEmployee(true)
-                }
-
-            }catch(err){
-                console.log(err)
-            }finally{
-                setLoading(false)
-            }
+    const {data: userData={}, isLoading, refetch} = useQuery({
+        queryKey:['userData', user?.email],
+        queryFn: async ()=>{
+            const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/employee/${user?.email}`)
+            // console.log(data)
+            return data[0] || {};
         }
-        fetchDet();
-    },[email, employee?.role])
+    })
 
-    return {employee, isAdmin, isHR, isEmployee, loading}
+    return [userData, isLoading]
+    
 };
 
 export default useEmployeeDet;
