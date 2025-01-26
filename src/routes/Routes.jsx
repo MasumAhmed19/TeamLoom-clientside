@@ -16,6 +16,7 @@ import Payroll from '../pages/Dashboard/contentbar/Payroll'
 import EmployeeList from '../pages/Dashboard/contentbar/EmployeeList'
 import HRRoutes from './HRRoutes'
 import EmployeeRoutes from './EmployeeRoutes'
+import Admin_HR_Routes from './Admin_HR_Routes'
 
 export const router = createBrowserRouter([
     {
@@ -60,7 +61,7 @@ export const router = createBrowserRouter([
             },{
                 // admin + hr 
                 path:'/dashboard/employee-list',
-                element:<EmployeeList  />
+                element:<Admin_HR_Routes><EmployeeList  /></Admin_HR_Routes> 
             },{
                 // hr 
                 path:'/dashboard/progress',
