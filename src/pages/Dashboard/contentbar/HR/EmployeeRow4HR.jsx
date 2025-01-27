@@ -1,12 +1,10 @@
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { IoCheckmarkCircle } from "react-icons/io5";
-import { GoArrowUpRight } from "react-icons/go";
 
 
 const EmployeeRow4HR = ({ el, idx, handleVerify, handleDetail, setIsDetailModalOpen, setCurrentData, setIsPaymentModalOpen, handlePayRequest }) => {
   return (
     <tr
-      key={el?._id}
       className="hover:bg-purple-50 transition-all duration-200"
     >
       <td>{idx + 1}</td>

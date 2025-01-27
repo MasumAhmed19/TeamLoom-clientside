@@ -23,8 +23,7 @@ const EmployeeList = () => {
                 {role==='admin' && <EmployeeListTableAdmin />}
                 {role==='hr' && <EmployeeList4HR />}
                     
-        
-                
+         
             </div>
         </div>
     );
