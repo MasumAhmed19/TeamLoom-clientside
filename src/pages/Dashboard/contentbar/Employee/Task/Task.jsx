@@ -6,7 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useQuery } from "@tanstack/react-query";
 import { MdDelete, MdEdit } from "react-icons/md";
-import TaskModal from "../../../../../components/pop-up/TaskModal";
+import PopModal from "../../../../../components/pop-up/PopModal";
 import { format } from "date-fns";
 import useEmployeeDet from "../../../../../hooks/useEmployeeDet";
 
@@ -176,13 +176,13 @@ const Task = () => {
       </div>
 
       {/* Delete Modal */}
-      <TaskModal isOpen={isDeleteModalOpen} closeModal={() => setIsDeleteModalOpen(false)} title="Confirm Delete">
+      <PopModal isOpen={isDeleteModalOpen} closeModal={() => setIsDeleteModalOpen(false)} title="Confirm Delete">
         <p>Are you sure you want to delete this task?</p>
         <button onClick={handleDelete} className="btn-danger mt-4 bg-red-300">Delete</button>
-      </TaskModal>
+      </PopModal>
 
       {/* Edit Modal */}
-      <TaskModal isOpen={isEditModalOpen} closeModal={() => setIsEditModalOpen(false)} title="Edit Task">
+      <PopModal isOpen={isEditModalOpen} closeModal={() => setIsEditModalOpen(false)} title="Edit Task">
         <form onSubmit={handleEdit} className="space-y-4">
           <div className="form-control">
 
@@ -213,7 +213,7 @@ const Task = () => {
           </div>
           <button type="submit" className="btn2">Update Task</button>
         </form>
-      </TaskModal>
+      </PopModal>
     </div>
   );
 };

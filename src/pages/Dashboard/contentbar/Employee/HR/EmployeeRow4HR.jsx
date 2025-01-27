@@ -1,7 +1,9 @@
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { IoCheckmarkCircle } from "react-icons/io5";
+import { GoArrowUpRight } from "react-icons/go";
 
-const EmployeeRow4HR = ({ el, idx, handleVerify }) => {
+
+const EmployeeRow4HR = ({ el, idx, handleVerify, handleDetail, setIsDetailModalOpen, setCurrentData, setIsPaymentModalOpen, handlePayRequest }) => {
   return (
     <tr
       key={el?._id}
@@ -16,6 +18,7 @@ const EmployeeRow4HR = ({ el, idx, handleVerify }) => {
               <img
                 src={el?.profileURL}
                 alt="Profile image"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
@@ -53,12 +56,15 @@ const EmployeeRow4HR = ({ el, idx, handleVerify }) => {
       </td>
 
       <td>
-        <span className=" w-fit">payment</span>
+        <button className="highlight1 flex items-center gap-2"
+        onClick={() => {setCurrentData(el); handlePayRequest(el?._id); setIsPaymentModalOpen(true)}}
+        >Make Request <FaSquareArrowUpRight /></button>
       </td>
+      
       <td>
         <button
           className="highlight1 flex items-center gap-2"
-          onClick={() => handleDetail(_id)}
+          onClick={() => {setCurrentData(el); handleDetail(el?._id); setIsDetailModalOpen(true)}}
         >
           Detail
           <FaSquareArrowUpRight />
