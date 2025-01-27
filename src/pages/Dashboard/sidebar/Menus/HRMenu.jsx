@@ -16,7 +16,7 @@ const HRmenu = ({onClose}) => {
     },
     {
       name: "Payment History",
-      path: "/dashboard/payment-history",
+      path: "/dashboard/payment-request",
       icon: <MdPayment />,
     },
     {

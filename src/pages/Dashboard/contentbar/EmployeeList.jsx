@@ -2,7 +2,7 @@ import EmployeeListTableAdmin from "../../../components/Tables/EmployeeListTable
 import useAuth from "../../../hooks/useAuth";
 import {Helmet} from 'react-helmet-async'
 import useRole from "../../../hooks/useRole";
-import EmployeeList4HR from "./Employee/HR/EmployeeList4HR";
+import EmployeeList4HR from "./HR/EmployeeList4HR";
 import TableLoader from "../../../components/Loader/TableLoader";
 
 const EmployeeList = () => {

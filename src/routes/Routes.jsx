@@ -9,14 +9,14 @@ import Dashboard from '../pages/Dashboard/Dashboard'
 import PrivateRoute from '../routes/PrivateRoute'
 import Profile from '../pages/Dashboard/contentbar/Profile'
 import Task from '../pages/Dashboard/contentbar/Employee/Task/Task'
-import PaymentHistory from '../pages/Dashboard/contentbar/PaymentHistory'
 import Notifications from '../pages/Dashboard/contentbar/Notifications'
 import Progress from '../pages/Dashboard/contentbar/Progress'
-import Payroll from '../pages/Dashboard/contentbar/Payroll'
+import Payroll from '../pages/Dashboard/contentbar/Admin/Payroll'
 import EmployeeList from '../pages/Dashboard/contentbar/EmployeeList'
 import HRRoutes from './HRRoutes'
 import EmployeeRoutes from './EmployeeRoutes'
 import Admin_HR_Routes from './Admin_HR_Routes'
+import PaymentRequest from '../pages/Dashboard/contentbar/HR/PaymentRequest'
 
 export const router = createBrowserRouter([
     {
@@ -52,8 +52,8 @@ export const router = createBrowserRouter([
                 element:<EmployeeRoutes><Task /></EmployeeRoutes>
             },{
                 // admin + hr 
-                path:'/dashboard/payment-history',
-                element:<PaymentHistory />
+                path:'/dashboard/payment-request',
+                element:<HRRoutes><PaymentRequest /></HRRoutes> 
             },{
                 // admin + hr + employee
                 path:'/dashboard/notifications',

@@ -56,9 +56,16 @@ const EmployeeRow4HR = ({ el, idx, handleVerify, handleDetail, setIsDetailModalO
       </td>
 
       <td>
-        <button className="highlight1 flex items-center gap-2"
+        {
+          el?.isVerified ? <button className="highlight1 flex items-center gap-2"
+          onClick={() => {setCurrentData(el); handlePayRequest(el?._id); setIsPaymentModalOpen(true)}}
+          >Make Request <FaSquareArrowUpRight /></button> 
+          :
+          <button disabled className="bg-[#dbdbdb] text-[#999999] px-[10px] py-[1px] rounded-full flex items-center gap-2"
         onClick={() => {setCurrentData(el); handlePayRequest(el?._id); setIsPaymentModalOpen(true)}}
         >Make Request <FaSquareArrowUpRight /></button>
+        }
+        
       </td>
       
       <td>

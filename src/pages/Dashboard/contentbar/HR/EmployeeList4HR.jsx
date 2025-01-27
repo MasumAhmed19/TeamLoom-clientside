@@ -1,10 +1,10 @@
 import { useState } from "react";
-import useAuth from "../../../../../hooks/useAuth";
+import useAuth from "../../../../hooks/useAuth";
 import axios from "axios";
-import TableLoader from "../../../../../components/Loader/TableLoader";
+import TableLoader from "../../../../components/Loader/TableLoader";
 import { useQuery } from "@tanstack/react-query";
 import EmployeeRow4HR from "./EmployeeRow4HR";
-import PopModal from "../../../../../components/pop-up/PopModal";
+import PopModal from "../../../../components/pop-up/PopModal";
 import {
   IoCallOutline,
   IoCheckmarkCircle,
@@ -13,6 +13,9 @@ import {
 } from "react-icons/io5";
 import { MdVerified } from "react-icons/md";
 import { FaTelegramPlane } from "react-icons/fa";
+import { format } from "date-fns";
+import { toast } from "react-toastify";
+
 
 const EmployeeListTableAdmin = () => {
   const { user } = useAuth();
@@ -20,6 +23,7 @@ const EmployeeListTableAdmin = () => {
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [currentData, setCurrentData] = useState(null);
+  const [startDate, setStartDate] = useState(new Date())
 
   const {
     data: allEmployee = [],
@@ -44,6 +48,59 @@ const EmployeeListTableAdmin = () => {
   const handlePayRequest = (id) => {
     console.log(id);
   };
+
+  const handleSalarySubmit = async (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const month = form.month.value;
+    const year = form.year.value;
+    const employee_id = currentData?._id;
+    const employee_name = currentData?.name;
+    const employee_designation= currentData?.designation;
+    const employee_bank_acc = currentData?.bank_account;
+    const isComplete = false;
+    const reqDate = format(startDate, "dd-MM-yyyy");
+    const payableSalary = currentData?.salary
+    const status = 'pending';
+    const transactionId= '-';
+
+    const payData = {
+      month,
+      year,
+      employee_id,
+      employee_name,
+      employee_designation,
+      employee_bank_acc,
+      isComplete,
+      payableSalary,
+      reqDate,
+      transactionId,
+      status
+    }
+    
+    try{
+      const result = await axios.post(`${import.meta.env.VITE_API_URL}/payment-req`, payData)
+      console.log(result)
+      if(result.data.acknowledged){
+        toast.success('Requested for the payment')
+        setIsPaymentModalOpen(false)
+      }
+    }catch (err) {
+      // Log the error
+      console.error(err);
+
+      if (err.response && err.response.status === 400) {
+        const errorMessage = err.response.data?.message || "An error occurred.";
+        if (errorMessage === "Payment Exists") {
+          toast.error("Payment request already exists for this month and year.");
+        } else {
+          toast.error(errorMessage);
+        }
+      } else {
+        toast.error("Something went wrong. Please try again later.");
+      }
+    }
+  }
 
   const handleVerify = async (id) => {
     try {
@@ -225,21 +282,47 @@ const EmployeeListTableAdmin = () => {
               </div>
             </div>
             
-            <div className="space-y-3">
-              <h2>Please give year and month for making salary request</h2>
-              <form>
-              <div className="form-control">
-                <select defaultValue="default" className="select select-bordered w-full" name="task">
-                  <option disabled value="default">Task on</option>
-                  <option value="Sales">Sales</option>
-                  <option value="Support">Support</option>
-                  <option value="Content">Content</option>
-                  <option value="Paper-work">Paper-work</option>
-                </select>
-              </div>
+            <div className="space-y-3 bg-slate-50 p-4 rounded-md">
+              <h2 className="text-center">Please put year and month for making salary request</h2>
+              <form onSubmit={handleSalarySubmit}>
+                <div className="flex gap-3">
+                  <div className="form-control w-full">
+                    <select
+                      defaultValue="default"
+                      className="select select-bordered w-full"
+                      name="month"
+                    >
+                      <option
+                        disabled
+                        value="default"
+                      >
+                        Month
+                      </option>
+                      <option value="january">January</option>
+                      <option value="february">February</option>
+                      <option value="march">March</option>
+                      <option value="april">April</option>
+                      <option value="may">May</option>
+                      <option value="june">June</option>
+                      <option value="july">July</option>
+                      <option value="august">August</option>
+                      <option value="september">September</option>
+                      <option value="october">October</option>
+                      <option value="november">November</option>
+                      <option value="december">December</option>
+                    </select>
+                  </div>
+
+                  <div className="form-control w-full">
+                    <input type="text" name="year" placeholder="Year" className="input input-bordered w-full px-4 py-2 border rounded-md" required />
+                  </div>
+
+                </div>
+
+                <button className="btn2" type='submit'>Make Request</button>
+                
               </form>
             </div>
-            
           </div>
         </PopModal>
       </>
