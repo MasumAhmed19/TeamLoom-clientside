@@ -19,7 +19,7 @@ const HeroSection = () => {
                         and admins collaborate—effortlessly.
                     </p>
                     {/* Button */}
-                    <Link className="btn1">
+                    <Link to='/login' className="btn1">
                         Get Started
                     </Link>
                 </div>

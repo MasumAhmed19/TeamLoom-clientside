@@ -131,7 +131,7 @@ const Payroll = () => {
                     stripe={stripePromise}
                   >
                     {/* <CheckoutForm /> */}
-                    <CheckoutForm  currentData={currentData} refetch={refetch}/>
+                    <CheckoutForm  currentData={currentData} refetch={refetch} setPaymentModal={setPaymentModal}/>
                   </Elements>
                 </div>
               </div>

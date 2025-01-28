@@ -84,7 +84,7 @@ const Header = () => {
 
             <div className="mx-2 flex-1 px-2 flex justify-between items-center">
               <Link className="flex items-center gap-1">
-                <img src="/src/assets/logo.png" className="w-8" alt="Logo" />
+                <img src="https://i.ibb.co.com/6H7FBtf/logo.png" className="w-8" alt="Logo" />
                 <h4 className="f2 text-4xl">TeamLoom</h4>
               </Link>
 

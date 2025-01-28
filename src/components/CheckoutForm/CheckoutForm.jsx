@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { toast } from "react-toastify";
 
-const CheckoutForm = ({ currentData, refetch }) => {
+const CheckoutForm = ({ currentData, refetch, setPaymentModal }) => {
   const axiosSecure = useAxiosSecure();
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
@@ -83,6 +83,7 @@ const CheckoutForm = ({ currentData, refetch }) => {
       toast.error("Failed to update payment status in database.");
     } finally {
       setProcessing(false);
+      setPaymentModal(false)
     }
   };
 
