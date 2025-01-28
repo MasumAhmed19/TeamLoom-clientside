@@ -11,18 +11,6 @@ const Progress = () => {
   const [name, setName] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
-  //   const [employees, setEmployees] = useState([]);
-
-  //   useEffect(()=>{
-  //     fetAllEmployee();
-  //   },[])
-
-  //   const fetAllEmployee = async ()=>{
-  //     const data = await axios.get(`${import.meta.env.VITE_API_URL}/all-employee?role=employee`);
-  //     setEmployees(data.data)
-  //   }
-
-    console.table({name, month, year})
 
   const {
     data: allTaskData = [],
@@ -40,7 +28,6 @@ const Progress = () => {
     },
   });
 
-  console.log(allTaskData.length);
 
   return (
     <div className="mt-5 space-y-5">

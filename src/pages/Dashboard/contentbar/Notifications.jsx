@@ -2,11 +2,13 @@ import { Helmet } from "react-helmet-async";
 
 const Notifications = () => {
     return (
-        <div>
+        <div className="mt-5 space-y-5">
             <Helmet>
                 <title>Notifications</title>
             </Helmet>
-            <h2>Notification </h2>
+            <div className="border p-5 rounded-lg">
+                You don't have any messages yet
+            </div>
         </div>
     );
 };

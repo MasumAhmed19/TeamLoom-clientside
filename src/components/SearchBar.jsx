@@ -189,9 +189,10 @@ const SearchBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             </div>
             <hr className="my-2" />
             <DropdownItem>Dashboard</DropdownItem>
-            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem><Link to="/">Home</Link></DropdownItem>
+            <DropdownItem><Link to="/">Contact</Link></DropdownItem>
             <DropdownItem onClick={logOut}>
-              <Link to="/">Sign out</Link>
+              <Link to="/">Logout</Link>
             </DropdownItem>
           </div>
         </Dropdown>

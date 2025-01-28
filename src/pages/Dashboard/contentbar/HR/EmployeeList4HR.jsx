@@ -15,6 +15,7 @@ import { MdVerified } from "react-icons/md";
 import { FaTelegramPlane } from "react-icons/fa";
 import { format } from "date-fns";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 
 const EmployeeListTableAdmin = () => {
@@ -24,6 +25,8 @@ const EmployeeListTableAdmin = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [currentData, setCurrentData] = useState(null);
   const [startDate, setStartDate] = useState(new Date())
+  const axiosSecure = useAxiosSecure()
+
 
   const {
     data: allEmployee = [],
@@ -32,9 +35,7 @@ const EmployeeListTableAdmin = () => {
   } = useQuery({
     queryKey: ["allEmployee", user?.email],
     queryFn: async () => {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/only-employees`
-      );
+      const response = await axiosSecure(`/only-employees`);
       return response.data;
     },
   });

@@ -71,7 +71,7 @@ const SignUp = () => {
         );
 
         console.log("User added to database:", result.data);
-        navigate("/dashboard");
+        navigate("/dashboard/profile");
         toast.success("Successfully Signed Up");
       } catch (updateError) {
         console.error("Error updating user profile:", updateError);

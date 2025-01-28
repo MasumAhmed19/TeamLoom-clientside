@@ -10,7 +10,7 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       const res = await signInWithGoogle();
-      navigate('/');
+      navigate('/dashboard/profile');
       setUser(res.user);
       toast.success('Login Successful')
     }catch (err){

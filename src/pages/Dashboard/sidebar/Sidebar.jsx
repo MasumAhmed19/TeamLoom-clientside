@@ -6,6 +6,10 @@ import useRole from "../../../hooks/useRole";
 import EmployeeMenu from "./Menus/EmployeeMenu";
 import HRmenu from "./Menus/HRMenu";
 import AdminMenu from "./Menus/AdminMenu";
+import { RiHome9Line } from "react-icons/ri";
+import { RiContactsBook3Line } from "react-icons/ri";
+
+
 
 const Sidebar = ({ onClose }) => {
   const { user, logOut } = useAuth();
@@ -64,6 +68,23 @@ const Sidebar = ({ onClose }) => {
             {role==='hr' && <HRmenu onClose={onClose} />}
             {role==='admin' && <AdminMenu onClose={onClose} />}
 
+            <div className="py-4"></div>
+            <hr className="" />
+
+            <Link
+              to="/"
+              className="flex items-center gap-1 text-md p-1 text-gray-500"
+            >
+              <RiHome9Line className="text-base text-[#7250FF]" /> Home
+            </Link>
+
+            <Link
+              to="/contact"
+              className="flex items-center gap-1 text-md p-1 text-gray-500"
+            >
+              <RiContactsBook3Line className="text-base text-[#7250FF]" /> Contact
+            </Link>
+
             <NavLink
               to="/"
               className="flex items-center gap-1 text-md p-1 text-gray-500"
@@ -71,6 +92,9 @@ const Sidebar = ({ onClose }) => {
             >
               <RiLogoutBoxLine className="text-base text-[#7250FF]" /> Logout
             </NavLink>
+
+
+
           </ul>
         </div>
 
