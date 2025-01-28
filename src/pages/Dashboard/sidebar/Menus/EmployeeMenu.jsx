@@ -11,7 +11,7 @@ const EmployeeMenu = ({onClose}) => {
         { name: "Task", path: "/dashboard/task", icon: <FaTasks />},
         {
           name: "Payment History",
-          path: "/dashboard/payment-history",
+          path: "/dashboard/payment-record",
           icon: <MdPayment /> ,
         },
         {

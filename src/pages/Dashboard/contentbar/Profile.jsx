@@ -8,6 +8,8 @@ import { MdEmail } from "react-icons/md";
 const Profile = () => {
     const {user} = useAuth();
 
+    
+
     return (
         <div className="mt-5 space-y-5">
             <Helmet>

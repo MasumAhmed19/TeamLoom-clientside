@@ -19,6 +19,7 @@ import Admin_HR_Routes from "./Admin_HR_Routes";
 import PaymentRequest from "../pages/Dashboard/contentbar/HR/PaymentRequest";
 import AdminRoutes from "./AdminRoutes";
 import Statistics from "../pages/Dashboard/contentbar/Statistics/Statistics";
+import PaymentRecord from "../pages/Dashboard/contentbar/Employee/PaymentRecord";
 
 export const router = createBrowserRouter([
   {
@@ -114,7 +115,14 @@ export const router = createBrowserRouter([
             <Payroll />
           </AdminRoutes>
         ),
-      },
+      },{
+        path:'/dashboard/payment-record',
+        element: (
+          <EmployeeRoutes>
+            <PaymentRecord />
+          </EmployeeRoutes>
+        ),
+      }
     ],
   },
 ]);

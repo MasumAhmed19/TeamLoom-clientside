@@ -1,15 +1,15 @@
 import { FaRegUser } from "react-icons/fa";
 import { FaListUl } from "react-icons/fa";
-import { FaTasks } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
-import { GiProgression } from "react-icons/gi";
 import { MdOutlineNotificationsActive } from "react-icons/md";
-import { RiDashboardFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { GrPieChart } from "react-icons/gr";
+
 
 
 const AdminMenu = ({onClose}) => {
     const admin = [
+        { name: "Dashboard", path: "/dashboard", icon: <GrPieChart /> },
         { name: "Profile", path: "/dashboard/profile", icon: <FaRegUser /> },
         {
           name: "Employee List",

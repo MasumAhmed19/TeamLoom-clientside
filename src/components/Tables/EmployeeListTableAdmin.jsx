@@ -5,14 +5,17 @@ import TableLoader from "../Loader/TableLoader";
 import axios from "axios";
 import EmployeeDetails from "../pop-up/EmployeeDetails";
 import MakeHR from "../pop-up/MakeHR";
-import useEmp from "../../hooks/useEmp";
+// import useEmp from "../../hooks/useEmp";
 import AdjustSalary from "../pop-up/AdjustSalary";
 import FireEmployee from "../pop-up/FireEmployee";
+import useAllHREmp from "../../hooks/useAllHREmp";
 
 const EmployeeListTableAdmin = () => {
   const { user } = useAuth();
   const [role, setRole] = useState("")
-  const {employees, refetch, isLoading} = useEmp(role)
+  // const {employees, refetch, isLoading} = useEmp(role)
+  const {employees, refetch, isLoading} = useAllHREmp(role)
+
 
   const [detData, setDetData] = useState(null);
 

@@ -20,7 +20,7 @@ const HeroSection = () => {
                         Empower your HR team, track employee productivity, and automate payroll—all in one unified platform.
                     </p>
                     {/* Button */}
-                    <Link to='/login' className="btn1">
+                    <Link to='/dashboard' className="btn1">
                         Get Started
                     </Link>
 
