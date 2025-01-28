@@ -16,7 +16,7 @@
 
 
 .sw{
-  @apply container mx-auto px-6 py-[50px]
+  @apply container mx-auto px-6 py-[70px]
 }
 
 /* .c1{
@@ -117,5 +117,14 @@
   .g14 {
     background: linear-gradient(transparent, #ECE5FE);
   }
+
+  .g15{
+    background: linear-gradient( #2A3542, transparent);
+  }
+
+  .g16{
+    background: linear-gradient(transparent, #2A3542);
+  }
+  
   
   

@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 const TaskHourChart = ({ taskOverview }) => {
 
 console.log(taskOverview)
+// na thakle demo data dekhaite hbe
 
   return (
     <div style={{ width: "100%", height: 250 }}>
