@@ -3,7 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useState } from "react";
-import { imageUpload } from "../../api/utils";
+import { imageUpload, saveUser } from "../../api/utils";
 
 
 
@@ -12,15 +12,20 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [rolee, setRolee] = useState("employee");
 
-  const handleGoogleLogin = () => {
-    signInWithGoogle()
-      .then((res) => {
-        navigate("/");
-        setUser(res.user);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+  const handleGoogleLogin = async () => {
+    try {
+      const res = await signInWithGoogle();
+
+      // Save user in DB
+      await saveUser(res?.user)
+      navigate('/dashboard/profile');
+      setUser(res.user);
+      toast.success('Login Successful')
+    }catch (err){
+      console.log(err)
+      toast.error('Login unsuccessful')
+    }
   };
 
   const handleSubmit = async (e) => {

@@ -1,6 +1,5 @@
 import useAuth from "./useAuth";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import useAxiosSecure from "./useAxiosSecure";
 
 const useEmployeeDet = () => {

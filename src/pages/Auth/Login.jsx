@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa6";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
+import { saveUser } from "../../api/utils";
 
 const Login = () => {
   const { user, setUser, signInWithGoogle, signIn } = useAuth();
@@ -10,6 +11,9 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       const res = await signInWithGoogle();
+
+      // Save user in DB
+      await saveUser(res?.user)
       navigate('/dashboard/profile');
       setUser(res.user);
       toast.success('Login Successful')

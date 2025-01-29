@@ -23,6 +23,22 @@ export const getEmployeeDetail = async (email)=>{
 }
 
 
+export const saveUser = async (user)=>{
+    //by default employee hisebe save krbe
+    await axios.post(`${import.meta.env.VITE_API_URL}/goolgle-signIn/${user?.email}`,{
+        name: user?.displayName,
+        email: user?.email,
+        bank_account: '2221425441',
+        role:'employee',
+        designation:'Sales Assistant',
+        salary:45000,
+        profileURL: user?.photoURL,
+        makeHR:false,
+        isVerified:false,
+    })
+}
+
+
 
     // useEffect(()=>{
     //     const fetchEmployeeData =async ()=>{
