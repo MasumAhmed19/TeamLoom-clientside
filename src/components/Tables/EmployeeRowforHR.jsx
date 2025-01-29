@@ -20,7 +20,7 @@ const EmployeeRowforHR = ({ singlaData, idx, fetchEmployeeDataByQuery }) => {
     {
       /* TODO: pop up for fire employee */
     }
-    console.log(id);
+    // console.log(id);
   };
 
   return (

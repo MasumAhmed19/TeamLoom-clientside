@@ -20,7 +20,7 @@ const PaymentRequest = () => {
             console.log(err)
         }
     }
-    console.log(payUser)
+    // console.log(payUser)
 
     return (
         <div className="mt-5 space-y-5">

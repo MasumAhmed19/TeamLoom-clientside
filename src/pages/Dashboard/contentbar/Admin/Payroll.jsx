@@ -31,11 +31,11 @@ const Payroll = () => {
     },
   });
 
-  console.log(allPayrollData);
+  // console.log(allPayrollData);
 
   const handlePayment = (id) => {
-    console.log(id);
-    console.log(currentData);
+    // console.log(id);
+    // console.log(currentData);
   };
 
   return (

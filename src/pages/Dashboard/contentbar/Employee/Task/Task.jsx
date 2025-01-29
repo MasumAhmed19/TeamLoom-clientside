@@ -20,7 +20,7 @@ const Task = () => {
   const [currentTask, setCurrentTask] = useState(null);
   const [userData] = useEmployeeDet();
 
-  console.log(userData.isVerified)
+  // console.log(userData.isVerified)
 
 
   const { data: tasks = [], isLoading, refetch } = useQuery({
@@ -77,7 +77,7 @@ const Task = () => {
 
   const handleEdit = async (e) => {
     e.preventDefault();
-    console.log(currentTask?._id)
+    // console.log(currentTask?._id)
     const form = e.target;
     const updatedTask = form.task.value;
     const updatedHours = parseInt(form.hoursWorked.value);

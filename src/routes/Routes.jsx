@@ -20,6 +20,7 @@ import PaymentRequest from "../pages/Dashboard/contentbar/HR/PaymentRequest";
 import AdminRoutes from "./AdminRoutes";
 import Statistics from "../pages/Dashboard/contentbar/Statistics/Statistics";
 import PaymentRecord from "../pages/Dashboard/contentbar/Employee/PaymentRecord";
+import AdminStatistics from "../pages/Dashboard/contentbar/Statistics/AdminStatistics";
 
 export const router = createBrowserRouter([
   {
@@ -106,6 +107,14 @@ export const router = createBrowserRouter([
             <Progress />{" "}
           </HRRoutes>
         ),
+      },{
+        path: "/dashboard/statistics",
+        element: (
+          <AdminRoutes>
+            <AdminStatistics />
+          </AdminRoutes>
+        ),
+
       },
       {
         // admin

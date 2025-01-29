@@ -2,7 +2,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 
 const TaskHourChart = ({ taskOverview }) => {
 
-console.log(taskOverview)
+// console.log(taskOverview)
 // na thakle demo data dekhaite hbe
 
   return (

@@ -41,7 +41,7 @@ const SignUp = () => {
 
     try {
       const profileURL = await imageUpload(profileFile);  
-      console.log(profileURL)
+      // console.log(profileURL)
 
       const newUserData = {
         name,
@@ -57,20 +57,20 @@ const SignUp = () => {
         isVerified
       };
 
-      console.log(newUserData);
+      // console.log(newUserData);
 
       const createUserRes = await createUser(email, password)
 
       try {
         await updateUserProfile(name, profileURL)
-        console.log("User profile updated")
+        // console.log("User profile updated")
 
         const result = await axios.post(
           `${import.meta.env.VITE_API_URL}/add-user/${email}`,
           newUserData, { headers: { "Content-Type": "application/json" } }
         );
 
-        console.log("User added to database:", result.data);
+        // console.log("User added to database:", result.data);
         navigate("/dashboard/profile");
         toast.success("Successfully Signed Up");
       } catch (updateError) {

@@ -40,14 +40,14 @@ const EmployeeListTableAdmin = () => {
     },
   });
 
-  console.log(allEmployee);
+  // console.log(allEmployee);
 
   const handleDetail = async (id) => {
-    console.log(currentData);
+    // console.log(currentData);
   };
 
   const handlePayRequest = (id) => {
-    console.log(id);
+    // console.log(id);
   };
 
   const handleSalarySubmit = async (e)=>{
@@ -81,7 +81,7 @@ const EmployeeListTableAdmin = () => {
     
     try{
       const result = await axios.post(`${import.meta.env.VITE_API_URL}/payment-req`, payData)
-      console.log(result)
+      // console.log(result)
       if(result.data.acknowledged){
         toast.success('Requested for the payment')
         setIsPaymentModalOpen(false)
@@ -108,7 +108,7 @@ const EmployeeListTableAdmin = () => {
       const result = await axios.patch(
         `${import.meta.env.VITE_API_URL}/verify/${id}`
       );
-      console.log(result);
+      // console.log(result);
       refetch();
     } catch (err) {
       console.log(err);

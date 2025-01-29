@@ -36,8 +36,8 @@ const FooterSec = () => {
               <div>
                 <FooterTitle title="about" />
                 <FooterLinkGroup col>
-                  <FooterLink href="#">Flowbite</FooterLink>
-                  <FooterLink href="#">Tailwind CSS</FooterLink>
+                  <FooterLink href="#">Contact</FooterLink>
+                  <FooterLink href="#">Services</FooterLink>
                 </FooterLinkGroup>
               </div>
               <div>
@@ -61,8 +61,8 @@ const FooterSec = () => {
           <div className="w-full sm:flex sm:items-center sm:justify-between">
             <FooterCopyright
               href="#"
-              by="Flowbite™"
-              year={2022}
+              by="TeamLoom"
+              year={2025}
             />
             <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
               <FooterIcon

@@ -9,8 +9,8 @@ import { GrPieChart } from "react-icons/gr";
 
 const AdminMenu = ({onClose}) => {
     const admin = [
-        { name: "Dashboard", path: "/dashboard", icon: <GrPieChart /> },
-        { name: "Profile", path: "/dashboard/profile", icon: <FaRegUser /> },
+      { name: "Profile", path: "/dashboard/profile", icon: <FaRegUser /> },
+      { name: "Statistics", path: "/dashboard/statistics", icon: <GrPieChart /> },
         {
           name: "Employee List",
           path: "/dashboard/employee-list",

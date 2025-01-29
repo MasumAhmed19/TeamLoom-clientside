@@ -26,7 +26,7 @@ const AdminStatistics = () => {
 
   const { totalHR, totalEmployee, totalWorkingHour, totalSalaryPaid, taskOverview } =
     statData || {};
-  console.log(totalHR, totalEmployee, totalWorkingHour, totalSalaryPaid, taskOverview);
+  // console.log(totalHR, totalEmployee, totalWorkingHour, totalSalaryPaid, taskOverview);
 
   return (
     <div>
