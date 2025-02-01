@@ -8,6 +8,7 @@ import { MdEmail } from "react-icons/md";
 const Profile = () => {
     const {user} = useAuth();
 
+    console.log(user?.uid)
     
 
     return (

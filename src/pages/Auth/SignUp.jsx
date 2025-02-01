@@ -44,6 +44,7 @@ const SignUp = () => {
     const isFire= false
     const isVerified = role==='hr'
 
+
     try {
       const profileURL = await imageUpload(profileFile);  
       // console.log(profileURL)
@@ -68,7 +69,7 @@ const SignUp = () => {
 
       try {
         await updateUserProfile(name, profileURL)
-        // console.log("User profile updated")
+        console.log("User profile updated")
 
         const result = await axios.post(
           `${import.meta.env.VITE_API_URL}/add-user/${email}`,

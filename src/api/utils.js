@@ -35,19 +35,6 @@ export const saveUser = async (user)=>{
         profileURL: user?.photoURL,
         makeHR:false,
         isVerified:false,
+        uid:user?.uid,
     })
 }
-
-
-
-    // useEffect(()=>{
-    //     const fetchEmployeeData =async ()=>{
-    //         try{
-    //         const userInfo = await getEmployeeDetail(user?.email)
-    //         // console.log(userInfo)
-    //         }catch(err){
-    //             console.error('error--->', err)
-    //         }
-    //     }
-    //     fetchEmployeeData();
-    // }, [user?.email])

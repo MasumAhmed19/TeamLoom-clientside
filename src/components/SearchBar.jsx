@@ -188,7 +188,7 @@ const SearchBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
               <h2 className="text-xs text-slate-400">{`${user?.email}`}</h2>
             </div>
             <hr className="my-2" />
-            <DropdownItem><Link to="/dashboard">Dashboard</Link></DropdownItem>
+            <DropdownItem><Link to="/dashboard/profile">Dashboard</Link></DropdownItem>
             <DropdownItem><Link to="/">Home</Link></DropdownItem>
             <DropdownItem><Link to="/">Contact</Link></DropdownItem>
             <DropdownItem onClick={logOut}>

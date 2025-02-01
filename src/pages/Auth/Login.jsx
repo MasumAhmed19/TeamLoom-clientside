@@ -8,6 +8,8 @@ const Login = () => {
   const { user, setUser, signInWithGoogle, signIn } = useAuth();
   const navigate = useNavigate()
 
+  
+
   const handleGoogleLogin = async () => {
     try {
       const res = await signInWithGoogle();
