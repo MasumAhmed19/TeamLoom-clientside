@@ -112,19 +112,8 @@ Follow these steps to run TeamLoom on your local machine:
    ```
 
 3. **Set up environment variables**
-   Create a `.env.local` file in the root directory and add the following:
-
-   ```sh
-   VITE_apiKey=YOUR_FIREBASE_API_KEY
-   VITE_authDomain=YOUR_FIREBASE_AUTH_DOMAIN
-   VITE_projectId=YOUR_FIREBASE_PROJECT_ID
-   VITE_storageBucket=YOUR_FIREBASE_STORAGE_BUCKET
-   VITE_messagingSenderId=YOUR_FIREBASE_MESSAGING_SENDER_ID
-   VITE_appId=YOUR_FIREBASE_APP_ID
-   VITE_IMAGEBB_KEY=YOUR_IMAGEBB_API_KEY
-   VITE_STRIPE_PUBLIC_KEY=YOUR_STRIPE_PUBLIC_KEY
-   VITE_API_URL=http://localhost:9000  # Change this in production
-   ```
+   Create a `.env.local` file in the root directory
+   
 
 4. **Run the project**
    ```sh
