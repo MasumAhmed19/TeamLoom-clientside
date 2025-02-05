@@ -16,7 +16,7 @@ const Sidebar = ({ onClose }) => {
   const  [role, isLoading] = useRole()
 
   return (
-    <div className="overflow-y-auto h-full p-5 text-black md:w-[300px] bg-white rounded-lg ">
+    <div className="overflow-y-auto h-full p-5 text-black md:w-[300px] bg-white dark:bg-[#262626] rounded-lg ">
       {/* ei div only mobile e show krbe Close Button for Mobile */}
       <div className="flex justify-between items-center md:hidden mb-4">
         <Link

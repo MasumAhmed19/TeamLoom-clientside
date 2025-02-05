@@ -4,6 +4,8 @@ import { BsThreeDots } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { useDarkMode } from "../../../Context/DarkModeContext";
+
 
 const Profile = () => {
     const {user} = useAuth();
@@ -19,9 +21,13 @@ const Profile = () => {
             <div className="border p-5 rounded-lg">
                 {/* header + image and setting button */}
                 <div className="">
-                    <div className="border rounded-md">
+                    {/* <div className="border rounded-md">
                         <img src="https://i.ibb.co.com/cw9yBQ6/profile-bg-2.png" alt="" className="h-[100px] md:h-[180px] w-full object-cover" />
-                    </div>
+                    </div> */}
+                    {/* <div className="border rounded-sm  bg-grid-pattern h-[100px] md:h-[180px] w-full"></div> */}
+                    <div className="h-[100px] md:h-[180px] bg-[radial-gradient(circle,_rgba(0,0,0,0.1)_1px,_transparent_1px)] bg-[size:10px_10px]"></div>
+
+
                     <div className="flex items-start md:items-center justify-between -mt-10  lg:-mt-20 px-4 md:px-6 lg:px-10">
                         <div className="flex flex-col items-start gap-4 " >
                             <img src={`${user?.photoURL}`} alt="" className="w-[20vw] h-[20vw] md:w-[8vw] md:h-[8vw] object-cover rounded-full border-4 border-[#7201FF]" />

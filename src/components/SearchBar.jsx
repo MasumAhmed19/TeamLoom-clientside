@@ -1,13 +1,20 @@
 import { IoMdSearch } from "react-icons/io";
-import { IoNotificationsSharp } from "react-icons/io5";
+import { IoMoonOutline, IoNotificationsSharp, IoSunnyOutline } from "react-icons/io5";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { RiMenuUnfoldFill } from "react-icons/ri";
 import useAuth from "../hooks/useAuth";
 import { Dropdown, DropdownItem } from "flowbite-react";
 import { Link } from "react-router-dom";
+import { useDarkMode } from "../Context/DarkModeContext";
+
+
+
 
 const SearchBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const { user, logOut } = useAuth();
+  const {darkMode, setDarkMode} = useDarkMode();
+
+  console.log(darkMode)
 
   return (
     <div className="flex items-center justify-between gap-2">
@@ -31,6 +38,15 @@ const SearchBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       </div>
 
       <div className="flex gap-3 items-center">
+
+        {/* DarkMood setup */}
+        <span className="bg-gray-100 dark:bg-[#171717] dark:text-[#E5E5E5] p-[10px] rounded-md cursor-pointer" onClick={()=>{setDarkMode(!darkMode)}}>
+          {
+            darkMode ? <IoSunnyOutline />:<IoMoonOutline /> 
+            
+          }
+        </span>
+
 
         {/* notification */}
         <Dropdown

@@ -125,6 +125,134 @@
   .g16{
     background: linear-gradient(transparent, #2A3542);
   }
+
+  .g17 {
+    background: linear-gradient( #2a35425b, transparent);
+    backdrop-filter: blur(10px); /* Blurs background elements behind it */
+    border-radius: 12px;
+}
+
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust grid size */
+  }
+
+  .dark .bg-grid-pattern {
+    background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+
+  }
+
+
+  .bg-dotted {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+  
+
+
+
+
+/* Background blur animations */
+.bg-blur1, .bg-blur2, .bg-blur3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(5rem);
+  opacity: 1;
+}
+
+/* First blur */
+.bg-blur1 {
+  width: 40rem;
+  height: 36rem;
+  background: linear-gradient(131.27deg, rgb(238, 8, 173) 26.63%, rgb(247, 14, 93) 100.47%);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate1 10s linear infinite reverse;
+}
+
+/* Second blur */
+.bg-blur2 {
+  width: 55rem;
+  height: 40rem;
+  background: linear-gradient(rgb(85, 67, 200) 0%, rgb(6, 233, 254) 100%);
+  top: 30%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  animation: rotate2 15s linear infinite normal;
+}
+
+/* Third blur */
+.bg-blur3 {
+  width: 50rem;
+  height: 40rem;
+  background: linear-gradient(rgb(228, 241, 46) 0%, rgb(86, 219, 99) 100%);
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  animation: rotate3 10s linear infinite reverse;
+}
+
+/* Animations */
+@keyframes rotate1 {
+  0% { transform: translate(-30vw, -25rem) rotate(0deg); }
+  100% { transform: translate(-30vw, -25rem) rotate(360deg); }
+}
+
+@keyframes rotate2 {
+  0% { transform: translate(48vw, -16rem) rotate(0deg); }
+  100% { transform: translate(48vw, -16rem) rotate(360deg); }
+}
+
+@keyframes rotate3 {
+  0% { transform: translate(48vw, -16rem) rotate(0deg); }
+  100% { transform: translate(48vw, -16rem) rotate(360deg); }
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: translate(48vw, -16rem) rotate(0deg);
+  }
+  100% {
+    transform: translate(48vw, -16rem) rotate(360deg);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: translate(48vw, -16rem) rotate(0deg);
+  }
+  100% {
+    transform: translate(48vw, -16rem) rotate(360deg);
+  }
+}
+
+@keyframes rotate3 {
+  0% {
+    transform: translate(48vw, -16rem) rotate(0deg);
+  }
+  100% {
+    transform: translate(48vw, -16rem) rotate(360deg);
+  }
+}
+
+.animate-rotate1 {
+  animation: rotate1 10s linear infinite reverse;
+}
+
+.animate-rotate2 {
+  animation: rotate2 15s linear infinite;
+}
+
+.animate-rotate3 {
+  animation: rotate3 10s linear infinite reverse;
+}
+
+
   
   
   

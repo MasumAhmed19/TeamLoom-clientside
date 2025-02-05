@@ -10,12 +10,14 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import { DarkModeProvider } from './Context/DarkModeContext'
 
 const queryClient = new QueryClient();
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <DarkModeProvider>
     <AuthProvider>
     <QueryClientProvider client={queryClient}>
       <ToastContainer 
@@ -35,5 +37,6 @@ createRoot(document.getElementById('root')).render(
  
     </QueryClientProvider>
     </AuthProvider>
+    </DarkModeProvider>
   </StrictMode>,
 )
