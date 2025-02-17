@@ -17,7 +17,7 @@ const HeroSection2 = () => {
           <h2 className="f2 text-[8vh] md:text-[10vh] leading-[60px] lg:leading-[80px] text-center text-gray-200 md:w-2/3">
             Streamline Workforce Management with Precision
           </h2>
-          <p className="text-gray-500 f1 text-xl md:w-2/3 text-center">
+          <p className="text-gray-300 f1 text-xl md:w-2/3 text-center">
             Empower your HR team, track employee productivity, and automate payroll—all in one unified platform.
           </p>
           <Link to="/dashboard" className="btn1">

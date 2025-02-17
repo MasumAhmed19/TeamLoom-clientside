@@ -114,7 +114,7 @@ const Header = () => {
         </div>
 
         {/* Sidebar menu */}
-        <div className="drawer-side">
+        <div className="drawer-side z-[10000]">
           <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
           <ul className="menu bg-gray-900 text-white min-h-full w-80 p-4 space-y-4 f1">
             {/* Sidebar Header */}
