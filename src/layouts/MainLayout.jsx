@@ -9,7 +9,9 @@ const MainLayout = () => {
             <div className="-mb-16">
                 <Header />
             </div>
-                <Outlet></Outlet>
+
+            <Outlet></Outlet>
+            
             <FooterSec />
         </div>
     );

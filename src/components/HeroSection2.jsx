@@ -9,7 +9,7 @@ const HeroSection2 = () => {
         {/* <div className="z-[3] absolute w-[40rem] h-[50rem] bg-gradient-to-r from-yellow-500 to-green-500 filter blur-[4rem] rounded-full transform -translate-x-[29vw] -translate-y-[30rem] animate-rotate3"></div> */}
       </div>
 
-      <div className="sw min-h-[120vh] md:min-h-[150vh] relative z-10">
+      <div className="sw p-5 min-h-[120vh] md:min-h-[150vh] relative z-10">
         {/* Hero container */}
         <div className=""></div>
         <div className="min-h-[80vh] flex flex-col items-center justify-center space-y-3 gap-5">
@@ -36,6 +36,7 @@ const HeroSection2 = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

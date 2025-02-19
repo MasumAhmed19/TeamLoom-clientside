@@ -9,16 +9,15 @@ const Home = () => {
   return (
     <div className="">
       {/* <HeroSection /> */}
-      <div className="-mt-16">
-        <HeroSection2 />
-      </div>
+      <HeroSection2 />
 
       {/* Feature Card */}
-      <section className="bg-black text-whit p-2">
-        <div className="container mx-auto">
-          <h2 className="f2 text-[5vh] md:text-[5vh] md:leading-[60px] lg:leading-[80px] text-center text-gray-200 md:w-2/3 mx-auto leading-tight">
-            Everything You Need to Manage Your Team Efficiently
+      <section className="bg-black text-whit p-5 py-[70px]">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-3">
+          <h2 className="h1 text-gray-50  mx-auto ">
+            What TeamLoom brings to the table ?
           </h2>
+          <p className="text-gray-100">TeamLoom enhances productivity with task tracking, real-time updates, and comprehensive employee insights.</p>
         </div>
         <div className="sw grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-white">
           <BlockCard
@@ -37,7 +36,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/*  */}
+      {/* FAQ */}
+
+
+      {/* What can HR do */}
+
+
+      {/* What can Employee do */}
+
+
+      {/* What can Admin do */}
+
 
     </div>
   );
