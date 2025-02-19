@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 
 @tailwind base;
@@ -11,8 +12,16 @@
 }
 
 .f2 {
-  font-family: "Jersey 15", serif;
+  /* font-family: "Jersey 15", serif; */
+  font-family: "Merriweather", serif;
+
 }
+
+.f3 {
+  font-family: "Jersey 15", serif;
+
+}
+
 
 
 .sw{

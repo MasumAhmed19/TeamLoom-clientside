@@ -12,12 +12,12 @@ const HeroSection2 = () => {
       <div className="sw min-h-[150vh] relative z-10">
         {/* Hero container */}
         <div className=""></div>
-        <div className="min-h-[80vh] flex flex-col items-center justify-center gap-5">
+        <div className="min-h-[80vh] flex flex-col items-center justify-center space-y-3 gap-5">
           <p className="link-highlight text-gray-200">Where Team and Tasks Align</p>
-          <h2 className="f2 text-[8vh] md:text-[10vh] leading-[60px] lg:leading-[80px] text-center text-gray-200 md:w-2/3">
+          <h2 className=" text-[6vh] leading-[7vh] md:text-[8vh] md:leading-[8vh] font-bold  text-center text-white md:w-2/3">
             Streamline Workforce Management with Precision
           </h2>
-          <p className="text-gray-300 f1 text-xl md:w-2/3 text-center">
+          <p className="text-gray-100 f1 text-lg md:w-2/3 text-center">
             Empower your HR team, track employee productivity, and automate payroll—all in one unified platform.
           </p>
           <Link to="/dashboard" className="btn1">

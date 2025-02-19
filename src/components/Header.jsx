@@ -17,7 +17,7 @@ const Header = () => {
   }, []);
 
   const menus = (
-    <div className="flex flex-col lg:flex-row gap-5 text-2xl f2">
+    <div className="flex flex-col lg:flex-row gap-5 text-lg font-bold">
       <div className="group relative inline-block">
         <Link className="" to="/">
           home
@@ -85,7 +85,7 @@ const Header = () => {
             <div className="mx-2 flex-1 px-2 flex justify-between items-center">
               <Link className="flex items-center gap-1">
                 <img src="https://i.ibb.co.com/6H7FBtf/logo.png" className="w-8" alt="Logo" />
-                <h4 className="f2 text-4xl">TeamLoom</h4>
+                <h4 className="f1 text-xl font-bold">TeamLoom</h4>
               </Link>
 
               {isMobile && user && (
