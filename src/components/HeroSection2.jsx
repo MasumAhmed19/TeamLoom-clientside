@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 const HeroSection2 = () => {
   return (
-    <div className="bg-[#030712] relative overflow-hidden">
+    <div className="bg-[#030712] relative overflow-hidden pt-24">
       <div className="absolute flex top-[47%] -left-[25%] transform -translate-x-1/2 -translate-y-1/2">
         {/* <div className="z-[1] absolute w-[40rem] h-[36rem] bg-gradient-to-r from-pink-500 to-red-500 filter blur-[6rem] rounded-full transform -translate-x-[30vw] -translate-y-[25rem] animate-rotate1"></div> */}
         <div className="z-[2] absolute w-[65rem] h-[50rem] bg-gradient-to-r from-[#D569A2] to-[#8F03FF] filter blur-[5rem] rounded-full transform -translate-x-[29vw] -translate-y-[35rem] animate-rotate2"></div>
         {/* <div className="z-[3] absolute w-[40rem] h-[50rem] bg-gradient-to-r from-yellow-500 to-green-500 filter blur-[4rem] rounded-full transform -translate-x-[29vw] -translate-y-[30rem] animate-rotate3"></div> */}
       </div>
 
-      <div className="sw min-h-[150vh] relative z-10">
+      <div className="sw min-h-[120vh] md:min-h-[150vh] relative z-10">
         {/* Hero container */}
         <div className=""></div>
         <div className="min-h-[80vh] flex flex-col items-center justify-center space-y-3 gap-5">

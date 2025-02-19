@@ -5,7 +5,10 @@ import {Outlet} from 'react-router-dom'
 const MainLayout = () => {
     return (
         <div>
-            <Header />
+            
+            <div className="-mb-16">
+                <Header />
+            </div>
                 <Outlet></Outlet>
             <FooterSec />
         </div>

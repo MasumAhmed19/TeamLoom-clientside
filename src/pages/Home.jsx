@@ -9,7 +9,9 @@ const Home = () => {
   return (
     <div className="">
       {/* <HeroSection /> */}
-      <HeroSection2 />
+      <div className="-mt-16">
+        <HeroSection2 />
+      </div>
 
       {/* Feature Card */}
       <section className="bg-black text-whit p-2">
