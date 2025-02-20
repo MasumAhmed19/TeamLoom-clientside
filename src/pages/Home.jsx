@@ -7,6 +7,7 @@ import EmployeeHome from "./Sections/EMployeeHome";
 import FAQHome from "./Sections/FAQHome";
 import FeatureCardHome from "./Sections/FeatureCardHome";
 import HRHome from "./Sections/HRHome";
+import RoleFeature from "./Sections/RoleFeature";
 import TestimonialsHome from "./Sections/TestimonialsHome";
 
 const Home = () => {
@@ -20,8 +21,13 @@ const Home = () => {
       {/* Feature Card */}
       <FeatureCardHome />
 
-      {/* FAQ */}
-      <FAQHome />
+      {/* Role Feature */}
+      <RoleFeature />
+
+
+      {/* Testimonials */}
+      <TestimonialsHome />
+
 
       {/* What can HR do */}
       <HRHome />
@@ -30,12 +36,14 @@ const Home = () => {
       <EmployeeHome />
 
 
-      {/* What can Admin do */}
-      <AdminHome />
+      {/* What can Admin do
+      <AdminHome /> */}
+
+      {/* FAQ */}
+      <FAQHome />
 
 
-      {/* Testimonials */}
-      <TestimonialsHome />
+      
 
 
     </div>

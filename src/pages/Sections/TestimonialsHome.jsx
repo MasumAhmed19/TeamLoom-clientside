@@ -20,64 +20,58 @@ const reviews = [
       name: "Ava",
       username: "@avaT",
       text: "I love how TeamLoom integrates everything I need to keep up with tasks and salaries.",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/5-BUilta6Y.jpg",
     },
     {
       id: 3,
       name: "Max",
       username: "@maxR",
       text: "As an HR exec, TeamLoom has made managing workflows and payments so much easier.",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/6-CoPM9HBX.jpg",
     },
     {
       id: 4,
       name: "Olivia",
       username: "@oliviaM",
       text: "Fantastic tool for managing employee updates and salary details. Highly recommend TeamLoom.",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/7-WcWh38Wv.jpg",
     },
     {
       id: 5,
       name: "James",
       username: "@jamesF",
       text: "TeamLoom is an all-in-one platform for employee management. Makes everything so much more efficient!",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/9-CCulDUUl.jpg",
     },
     {
       id: 6,
       name: "Sophia",
       username: "@sophiaK",
       text: "This website saves me so much time with salary tracking and contract management on TeamLoom.",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/1-BQBdWOXh.jpg",
     },
     {
       id: 7,
       name: "Ben",
       username: "@benL",
       text: "TeamLoom is a must-have for any business. It’s streamlined and easy to use.",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/2-BIyLlzsI.jpg",
     },
     {
       id: 8,
       name: "Isla",
       username: "@islaD",
       text: "Highly useful for HRs. Easy workflow management and all employee data in one place on TeamLoom.",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/3-pN7dByUJ.jpg",
     },
     {
       id: 9,
       name: "Leo",
       username: "@leoP",
       text: "The workflow updates on TeamLoom make it so much easier to stay on top of projects and salaries.",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
+      avatar: "https://www.reactbits.dev/assets/4-DE_PC7-8.jpg",
     },
-    {
-      id: 10,
-      name: "Emma",
-      username: "@emmaS",
-      text: "TeamLoom has simplified my work, keeping track of everything in one spot. Love it!",
-      avatar: "https://www.reactbits.dev/assets/8-DlExvXZh.jpg",
-    },
+
   ];
   
 const TestimonialsMarquee = () => {
@@ -90,11 +84,11 @@ const TestimonialsMarquee = () => {
     offset: ["start end", "end start"],
   });
 
-  const springScrollY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  // const springScrollY = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001,
+  // });
 
   useEffect(() => {
     const updateDuplicateCount = () => {
@@ -131,7 +125,7 @@ const TestimonialsMarquee = () => {
 
   return (
     <div className="bg-black py-[70px]">
-      <div className="max-w-2xl mx-auto text-left md:text-center mb-10 space-y-3 lg:mb-14">
+      <div className="max-w-2xl mx-auto text-left md:text-center mb-10 space-y-3 lg:mb-14 p-10">
         <h2 className="h1 text-white ">Here's what others are saying</h2>
         <p className="p1">
         They think TeamLoom is cool, maybe you will too!

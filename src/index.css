@@ -272,4 +272,7 @@
 
   
   
-  
+  .redGrad{
+    background: rgb(240,209,244);
+background: radial-gradient(circle, rgba(240,209,244,1) 0%, rgba(188,43,240,0) 100%);
+  }

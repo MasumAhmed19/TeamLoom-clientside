@@ -126,7 +126,7 @@ const Header = () => {
             {/* Sidebar Header */}
             <li className="text-center text-lg font-semibold mt-5 mb-6">
               <Link className="flex items-center gap-1">
-                <img src="/src/assets/logo.png" className="w-8" alt="Logo" />
+                <img src="https://i.ibb.co.com/6H7FBtf/logo.png" className="w-8" alt="Logo" />
                 <h4 className="f2 text-xl pl-1">TeamLoom</h4>
               </Link>
             </li>
