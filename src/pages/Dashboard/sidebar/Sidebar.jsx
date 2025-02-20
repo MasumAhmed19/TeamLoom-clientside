@@ -45,12 +45,12 @@ const Sidebar = ({ onClose }) => {
                 {isLoading ? (
                   <span className="loading loading-bars loading-xs"></span>
                 ) : (
-                  <h5 className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm">
+                  <h5 className="bg-[#8F03FF] text-white px-2 py-1 rounded-full text-sm">
                     {role}
                   </h5>
                 )}
               </div>
-              <h2 className="text-xs text-gray-500 dark:text-gray-400">{user?.email}</h2>
+              <h2 className="text-xs text-gray-500 dark:text-gray-300 mt-1">{user?.email}</h2>
             </div>
           </div>
 

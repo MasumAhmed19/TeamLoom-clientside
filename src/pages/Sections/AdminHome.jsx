@@ -61,7 +61,7 @@ const AdminHome = () => {
                 <p className="text-sm lg:text-base text-neutral-400">
                   <span className="text-white">Admin Control: </span>
                   Manage all verified employees, adjust salaries, assign HR
-                  roles, and manage payroll using Stripe.
+                  roles, and manage <span className="link-highlight">payroll using Stripe</span>.
                 </p>
               </div>
             </div>
