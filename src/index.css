@@ -46,7 +46,7 @@
 
 
 .active{
-  @apply bg-[#F5F5F4] rounded-sm text-[#8C52FF]
+  @apply bg-[#F5F5F4] dark:bg-[#8F03FF] dark:text-white rounded-sm text-[#8C52FF]
 }
 
 .link-highlight{
