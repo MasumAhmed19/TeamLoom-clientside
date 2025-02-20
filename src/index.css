@@ -67,6 +67,10 @@
   @apply  text-[4.5vh] md:text-[4vh] font-semibold text-left md:text-center
 }
 
+.p1{
+  @apply text-base text-gray-400
+}
+
 
 
 

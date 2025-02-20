@@ -18,7 +18,7 @@ const BlockCard = ({
 
         <div className="flex flex-col items-start">
           <h2 className="link-highlight">{title}</h2>
-          <p className="text-gray-300 mt-2">{subtitle}</p>
+          <p className="p1 mt-2">{subtitle}</p>
 
           {/* <div className="py-8">
             <Link

@@ -24,11 +24,11 @@ const FAQHome = () => {
         },
         {
           ques: "What features are available in Employee Dashboard?",
-          ans: "Employees can submit daily work hours, view payment history, and edit/delete work logs through private routes like /work-sheet and /payment-history.",
+          ans: "Employees can submit daily work hours, view payment history, and edit or delete work logs through private routes.",
         },
         {
           ques: "What actions can HR perform?",
-          ans: "HR can verify employees, view employee details, and process payroll payments through private routes like /employee-list, /details/:slug, and /progress.",
+          ans: "HR can verify employees, view employee details, and process payroll payments through private routes.",
         },
         {
           ques: "How does salary payment work?",
@@ -49,8 +49,8 @@ const FAQHome = () => {
             <h2 className="h1 text-white ">
               Frequently Asked Questions
             </h2>
-            <p className="text-white ">
-            Absolutely! Suggestify allows users to customize their preferences, ensuring that the recommendations align closely with their tastes and interests.
+            <p className="p1">
+            Find answers to common questions about how our platform works, user roles, account management, and key features.
             </p>
           </div>
 
@@ -62,7 +62,7 @@ const FAQHome = () => {
                     <h3 className="text-lg link-highlight duration-200">
                     {qyery.ques}
                     </h3>
-                    <p className="mt-2 text-gray-400 group-hover:text-white  duration-200">
+                    <p className="mt-2 p1 group-hover:text-white  duration-200">
                       {qyery.ans}
                     </p>
                   </div>
