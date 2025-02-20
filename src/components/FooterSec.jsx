@@ -19,11 +19,11 @@ import { Link } from "react-router-dom";
 
 const FooterSec = () => {
   return (
-    <section className="bg-black">
+    <section className="bg-black p-10">
       <section className="sw">
         <div className="w-full">
-          <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-            <Link to='/' className="flex items-center">
+          <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 gap-5">
+            <Link to='/' className="flex items-center ">
               <FooterBrand
                 src="https://i.ibb.co.com/6H7FBtf/logo.png"
                 alt="TeamLoom logo"
@@ -34,21 +34,21 @@ const FooterSec = () => {
 
             <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
               <div>
-                <FooterTitle title="about" />
+                <FooterTitle title="Quick Links" className="text-white" />
                 <FooterLinkGroup col>
-                  <FooterLink href="#">Contact</FooterLink>
-                  <FooterLink href="#">Services</FooterLink>
+                  <FooterLink href="/">Home</FooterLink>
+                  <FooterLink href="/dashboard/profile">Dashboard</FooterLink>
+                  <FooterLink href="/contact">Contact</FooterLink>
                 </FooterLinkGroup>
               </div>
               <div>
-                <FooterTitle title="Follow us" />
+                <FooterTitle title="Follow us" className="text-white"  />
                 <FooterLinkGroup col>
-                  <FooterLink href="#">Github</FooterLink>
-                  <FooterLink href="#">Discord</FooterLink>
+                  <FooterLink href="https://github.com/MasumAhmed19">Github</FooterLink>
                 </FooterLinkGroup>
               </div>
               <div>
-                <FooterTitle title="Legal" />
+                <FooterTitle title="Legal " className="text-white"  />
                 <FooterLinkGroup col>
                   <FooterLink href="#">Privacy Policy</FooterLink>
                   <FooterLink href="#">Terms &amp; Conditions</FooterLink>
@@ -66,24 +66,12 @@ const FooterSec = () => {
             />
             <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
               <FooterIcon
-                href="#"
-                icon={BsFacebook}
-              />
-              <FooterIcon
-                href="#"
-                icon={BsInstagram}
-              />
-              <FooterIcon
-                href="#"
+                href="https://x.com/Masum_Ahmedd"
                 icon={BsTwitter}
               />
               <FooterIcon
-                href="#"
+                href="https://github.com/MasumAhmed19"
                 icon={BsGithub}
-              />
-              <FooterIcon
-                href="#"
-                icon={BsDribbble}
               />
             </div>
           </div>
