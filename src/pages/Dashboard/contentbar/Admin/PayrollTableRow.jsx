@@ -4,7 +4,7 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 
 const PayrollTableRow = ({ el, idx, handlePayment, setCurrentData, setPaymentModal }) => {
   return (
-    <tr className="hover:bg-purple-50 transition-all duration-200">
+    <tr className="hover:bg-purple-50 dark:hover:bg-black transition-all duration-200 dark:border-[#4B5563]">
       <td>{idx + 1}</td>
 
       <td>
@@ -43,7 +43,7 @@ const PayrollTableRow = ({ el, idx, handlePayment, setCurrentData, setPaymentMod
               handlePayment(el?._id);
             }}
           >
-            <MdPayment className="text-lg" /> pay now
+            <MdPayment className="text-lg " /> pay now
           </span>
         )}
       </td>
@@ -54,7 +54,7 @@ const PayrollTableRow = ({ el, idx, handlePayment, setCurrentData, setPaymentMod
             completed
           </span>
         ) : (
-          <span className="bg-yellow-100 px-1 rounded-md capitalize">
+          <span className="bg-yellow-100 dark:text-black px-1 rounded-md capitalize">
             pending
           </span>
         )}

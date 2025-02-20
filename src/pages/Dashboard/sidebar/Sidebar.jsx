@@ -12,9 +12,9 @@ const Sidebar = ({ onClose }) => {
   const [role, isLoading] = useRole();
 
   return (
-    <div className="overflow-y-auto h-full p-5 text-black dark:text-white md:w-[300px] bg-white dark:bg-[#262626] rounded-lg">
+    <div className="overflow-y-auto mt-2 h-full p-5 text-black dark:text-white md:w-[300px] bg-white dark:bg-[#262626] rounded-lg">
       {/* Close Button for Mobile */}
-      <div className="flex justify-between items-center md:hidden mb-4">
+      {/* <div className=" flex justify-between items-center md:hidden mb-4">
         <Link to="/" className="flex items-center gap-2 w-full">
           <img
             src="https://i.ibb.co.com/6H7FBtf/logo.png"
@@ -27,12 +27,12 @@ const Sidebar = ({ onClose }) => {
           <IoCloseSharp className="text-2xl" />
         </button>
         <hr className="border-gray-300 dark:border-gray-600" />
-      </div>
+      </div> */}
 
       {/* Sidebar Full Content */}
       <div className="space-y-5">
         <div className="flex flex-col gap-5">
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center ">
             <img
               referrerPolicy="no-referrer"
               src={user?.photoURL}
@@ -87,14 +87,14 @@ const Sidebar = ({ onClose }) => {
         </div>
 
         {/* Footer */}
-        <div className="hidden md:flex absolute bottom-5 justify-between w-[calc(100vw-32px)] md:w-4/5">
+        <div className="md:flex absolute bottom-5 justify-between w-[calc(100vw-32px)] md:w-4/5">
           <Link to="/" className="flex items-center gap-2 w-full">
             <img
               src="https://i.ibb.co.com/6H7FBtf/logo.png"
               alt="Logo"
               className="w-8"
             />
-            <h2 className="f2 text-3xl">TeamLoom</h2>
+            <h2 className="f2 text-2xl">TeamLoom</h2>
           </Link>
         </div>
       </div>

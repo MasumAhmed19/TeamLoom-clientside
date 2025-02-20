@@ -3,13 +3,13 @@ import CommonHSection from "../components/commonHSection";
 
 const Contact = () => {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen py-[110px]">
 
       <section className="bg-black text-white">
         <div className="sw ">
           <div className="flex flex-col gap-5 items-center text-center">
-            <h2 className="f2 text-[10vh] leading-[80px]">Contact Us</h2>
-            <p className="text-lg w-2/3">Get in touch with us. We will respond to your inquiry within 24 hours.</p>
+            <h2 className="f2 text-[8vh] leading-[80px]">Contact Us</h2>
+            <p className="text-lg p1 w-2/3">Get in touch with us. We will respond to your inquiry within 24 hours.</p>
 
           </div>
         </div>
@@ -18,7 +18,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
 
         <div className="relative h-full min-h-[400px] rounded-lg overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60"></div>
           <div
             className="h-full w-full bg-cover bg-center"
             style={{
