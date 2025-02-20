@@ -14,7 +14,7 @@ const EmployeeList = () => {
             <Helmet>
                 <title>Employee List</title>
             </Helmet>
-            <div className="border p-5 rounded-lg">
+            <div className="border dark:border-[#4B5563] p-5 rounded-lg">
                 {/* All Employee */}
     
                 {role==='admin' && <EmployeeListTableAdmin />}

@@ -17,8 +17,10 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
     profileURL,
   } = singlaData || {};
 
-  return (
-    <tr className="hover:bg-purple-50 transition-all duration-200">
+  return ( 
+
+
+    <tr className="hover:bg-purple-50 dark:hover:bg-black transition-all duration-200 dark:border-[#4B5563]">
       <td>{idx + 1}</td>
 
       <td>
@@ -26,6 +28,7 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
           <div className="avatar">
             <div className="mask mask-squircle h-10 w-10">
               <img
+                 referrerPolicy="no-referrer"
                 src={profileURL}
                 alt="Profile image"
               />
@@ -61,7 +64,7 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
 
       <td>
         <button
-          className="highlight1"
+          className="highlight4both"
           onClick={() => handleAdjustSalary(_id)}
         >
           Adjust Salary
@@ -70,7 +73,7 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
 
       <td>
         <button
-          className="highlight1"
+          className="highlight4both"
           onClick={() => handleAdjustFire(_id)}
         >
           Fire
@@ -80,7 +83,7 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
       <td>
         {role === "employee" ? (
           <button
-            className="highlight1"
+            className="highlight4both"
             onClick={() => handleAdjustMakeHR(_id)}
           >
             Make HR
@@ -94,7 +97,7 @@ const EmployeeRowforAdmin = ({ singlaData, idx, handleAdjustSalary, handleAdjust
 
       <td>
         <button
-          className="highlight1 flex items-center gap-2"
+          className="highlight4both flex items-center gap-2"
           onClick={() => handleDetail(_id)}
         >
           Detail<FaSquareArrowUpRight />

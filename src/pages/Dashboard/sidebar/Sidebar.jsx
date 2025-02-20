@@ -66,14 +66,14 @@ const Sidebar = ({ onClose }) => {
               to="/"
               className="flex items-center gap-2 text-md p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
             >
-              <RiHome9Line className="text-base text-[#7250FF]" /> Home
+              <RiHome9Line className="text-lg dark:text-white text-[#7250FF]" /> Home
             </Link>
 
             <Link
               to="/contact"
               className="flex items-center gap-2 text-md p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
             >
-              <RiContactsBook3Line className="text-base text-[#7250FF]" /> Contact
+              <RiContactsBook3Line className="text-lg dark:text-white text-[#7250FF]" /> Contact
             </Link>
 
             <NavLink
@@ -81,7 +81,7 @@ const Sidebar = ({ onClose }) => {
               className="flex items-center gap-2 text-md p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
               onClick={logOut}
             >
-              <RiLogoutBoxLine className="text-base text-[#7250FF]" /> Logout
+              <RiLogoutBoxLine className="text-lg dark:text-white text-[#7250FF]" /> Logout
             </NavLink>
           </ul>
         </div>

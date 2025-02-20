@@ -12,13 +12,11 @@ import useAllHREmp from "../../hooks/useAllHREmp";
 
 const EmployeeListTableAdmin = () => {
   const { user } = useAuth();
-  const [role, setRole] = useState("")
+  const [role, setRole] = useState("");
   // const {employees, refetch, isLoading} = useEmp(role)
-  const {employees, refetch, isLoading} = useAllHREmp(role)
-
+  const { employees, refetch, isLoading } = useAllHREmp(role);
 
   const [detData, setDetData] = useState(null);
-
 
   const handleAdjustSalary = async (id) => {
     document.getElementById("modal_adjust_salary").showModal();
@@ -54,7 +52,6 @@ const EmployeeListTableAdmin = () => {
     } catch (err) {
       console.log(err);
     }
-
   };
 
   const handleDetail = async (id) => {
@@ -78,7 +75,7 @@ const EmployeeListTableAdmin = () => {
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
-            <thead className="bg-[#EBD9FF] text-[#7201FF] p-[1px]">
+            <thead className="bg-[#EBD9FF] dark:bg-[#8F03FF] dark:text-white text-[#7201FF] p-[1px]">
               <tr>
                 <th></th>
                 <th>Name</th>
@@ -86,23 +83,35 @@ const EmployeeListTableAdmin = () => {
                 <th>Bank Account No</th>
                 <th>
                   <select
-                    className="text-xs bg-transparent border-none focus:outline-none"
+                    className="text-xs bg-transparent border-none focus:outline-none text-[#8101FF] dark:text-gray-100 dark:bg-[#8F03FF]"
                     onChange={(e) => setRole(e.target.value)}
                   >
                     <option
                       selected
                       value=""
+                      className="dark:bg-[#8F03FF]"
                     >
                       Role
                     </option>
-                    <option value="hr">HR</option>
-                    <option value="employee">Employee</option>
+                    <option
+                      value="hr"
+                      className="dark:bg-[#8F03FF]"
+                    >
+                      HR
+                    </option>
+                    <option
+                      value="employee"
+                      className="dark:bg-[#8F03FF]"
+                    >
+                      Employee
+                    </option>
                   </select>
                 </th>
+
                 <th>Designation</th>
                 <th>Salary</th>
                 <th>Adjust Salary</th>
-                <th>Fire</th> 
+                <th>Fire</th>
                 <th>Make HR</th>
                 <th>Details</th>
               </tr>
@@ -128,9 +137,18 @@ const EmployeeListTableAdmin = () => {
 
       <>
         <EmployeeDetails detData={detData} />
-        <MakeHR detData={detData} refetch={refetch} />
-        <AdjustSalary detData={detData} refetch={refetch}/>
-        <FireEmployee detData={detData} refetch={refetch}/>
+        <MakeHR
+          detData={detData}
+          refetch={refetch}
+        />
+        <AdjustSalary
+          detData={detData}
+          refetch={refetch}
+        />
+        <FireEmployee
+          detData={detData}
+          refetch={refetch}
+        />
       </>
     </div>
   );
