@@ -2,6 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useEffect, useState } from "react";
 import { FaHome, FaTachometerAlt, FaAddressCard, FaInfoCircle, FaSignInAlt, FaUserPlus, FaSignOutAlt } from 'react-icons/fa';
+import { RiContactsBook3Line, RiHome9Line } from "react-icons/ri";
+import { RxDashboard } from "react-icons/rx";
+
 
 const Header = () => {
   const { user, logOut } = useAuth();
@@ -61,6 +64,7 @@ const Header = () => {
     <div className="bg-transparent relative z-[1000]">
       <div className="drawer container mx-auto">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
           <div className="navbar w-full text-white">
@@ -104,6 +108,7 @@ const Header = () => {
 
               {user && (
                 <img
+                  referrerPolicy="no-referrer"
                   src={`${user?.photoURL}`}
                   className="w-10 h-10 rounded-full object-cover border-2 border-gray-200 hover:shadow-md transition-all duration-200"
                   alt="User Profile"
@@ -113,46 +118,44 @@ const Header = () => {
           </div>
         </div>
 
+
         {/* Sidebar menu */}
         <div className="drawer-side z-[10000]">
           <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-          <ul className="menu bg-gray-900 text-white min-h-full w-80 p-4 space-y-4 f1">
+          <ul className="menu bg-black text-white min-h-full w-80 p-4 space-y-4 f1">
             {/* Sidebar Header */}
-            <li className="text-center text-lg font-semibold mb-6">
+            <li className="text-center text-lg font-semibold mt-5 mb-6">
               <Link className="flex items-center gap-1">
                 <img src="/src/assets/logo.png" className="w-8" alt="Logo" />
-                <h4 className="f2 text-4xl">TeamLoom</h4>
+                <h4 className="f2 text-xl pl-1">TeamLoom</h4>
               </Link>
             </li>
 
             {/* Sidebar Items */}
             <li>
-              <Link to="/" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
-                <FaHome />
-                Home
+              <Link to="/" className="flex text-md items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
+                <RiHome9Line className=" text-white" /> Home
               </Link>
             </li>
-            {
-              user &&
+            
                 <li>
-                  <Link to="/dashboard/profile" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
-                    <FaTachometerAlt />
+                  <Link to="/dashboard/profile" className="flex text-md items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
+                  <RxDashboard />
                     Dashboard
                   </Link>
                 </li>
-            }
+            
             <li>
-              <Link to="/contact" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
-                <FaAddressCard />
-                Contact
+              <Link to="/contact" className="flex text-md items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
+                  <RiContactsBook3Line className=" text-white" /> Contact
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/about" className="flex items-center gap-2 hover:bg-gray-700 p-2 rounded-md">
                 <FaInfoCircle />
                 About
               </Link>
-            </li>
+            </li> */}
 
             {/* Conditional Login/Logout */}
             {
