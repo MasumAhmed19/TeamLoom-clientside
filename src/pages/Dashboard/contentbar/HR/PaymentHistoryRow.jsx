@@ -2,7 +2,7 @@
 const PaymentHistoryRow = ({el, idx}) => {
     return (
          <tr
-              className="hover:bg-purple-50 transition-all duration-200"
+              className="hover:bg-purple-50 dark:hover:bg-black transition-all duration-200 dark:border-[#4B5563]"
             >
               <td>{idx + 1}</td>
         
@@ -29,7 +29,7 @@ const PaymentHistoryRow = ({el, idx}) => {
               <td>
                 {
                     el?.status==='pending' ? 
-                    <span className="bg-yellow-200 px-1 rounded-md capitalize">{el?.status}</span> 
+                    <span className="bg-yellow-200 dark:text-black px-1 rounded-md capitalize">{el?.status}</span> 
                     :
                     <span className="bg-[#e9d8ff] text-[#7201FF] px-1 rounded-full capitalize">{el?.status}</span> 
                 }

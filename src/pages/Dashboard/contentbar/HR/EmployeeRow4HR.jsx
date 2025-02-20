@@ -5,7 +5,7 @@ import { IoCheckmarkCircle } from "react-icons/io5";
 const EmployeeRow4HR = ({ el, idx, handleVerify, handleDetail, setIsDetailModalOpen, setCurrentData, setIsPaymentModalOpen, handlePayRequest }) => {
   return (
     <tr
-      className="hover:bg-purple-50 transition-all duration-200"
+      className="hover:bg-purple-50 dark:hover:bg-black transition-all duration-200 dark:border-[#4B5563]"
     >
       <td>{idx + 1}</td>
 
@@ -35,7 +35,7 @@ const EmployeeRow4HR = ({ el, idx, handleVerify, handleDetail, setIsDetailModalO
         <span className="font-medium cursor-pointer" onClick={()=>handleVerify(el?._id)}>
           {el?.isVerified ? (
             <span className="flex items-center gap-1"> 
-                <IoCheckmarkCircle className="text-lg text-[#7201FF]" /> <p className="text-slate-500">verifed</p>
+                <IoCheckmarkCircle className="text-lg text-[#8F03FF]" /> <p className="text-slate-500 dark:text-slate-300">verifed</p>
             </span>
           ) : (
             <button className=" bg-[#7201ff] text-white px-1 rounded">Verify now</button>
@@ -55,7 +55,7 @@ const EmployeeRow4HR = ({ el, idx, handleVerify, handleDetail, setIsDetailModalO
 
       <td>
         {
-          el?.isVerified ? <button className="highlight1 flex items-center gap-2"
+          el?.isVerified ? <button className="highlight4both flex items-center gap-2"
           onClick={() => {setCurrentData(el); handlePayRequest(el?._id); setIsPaymentModalOpen(true)}}
           >Make Request <FaSquareArrowUpRight /></button> 
           :
@@ -68,7 +68,7 @@ const EmployeeRow4HR = ({ el, idx, handleVerify, handleDetail, setIsDetailModalO
       
       <td>
         <button
-          className="highlight1 flex items-center gap-2"
+          className="highlight4both flex items-center gap-2"
           onClick={() => {setCurrentData(el); handleDetail(el?._id); setIsDetailModalOpen(true)}}
         >
           Detail

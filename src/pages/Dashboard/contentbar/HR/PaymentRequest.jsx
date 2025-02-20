@@ -5,33 +5,35 @@ import axios from "axios";
 import PaymentHistoryRow from "./PaymentHistoryRow";
 
 const PaymentRequest = () => {
-    const {user} = useAuth()
-    const [payUser, setPayUser]= useState([]);
-    
-    useEffect(()=>{
-        fetchPayrollData()
-    }, [user?.email])
+  const { user } = useAuth();
+  const [payUser, setPayUser] = useState([]);
 
-    const fetchPayrollData =async ()=>{
-        try{
-            const result = await axios.get(`${import.meta.env.VITE_API_URL}/all-payment-request`)
-            setPayUser(result.data)
-        }catch(err){
-            console.log(err)
-        }
+  useEffect(() => {
+    fetchPayrollData();
+  }, [user?.email]);
+
+  const fetchPayrollData = async () => {
+    try {
+      const result = await axios.get(
+        `${import.meta.env.VITE_API_URL}/all-payment-request`
+      );
+      setPayUser(result.data);
+    } catch (err) {
+      console.log(err);
     }
-    // console.log(payUser)
+  };
+  // console.log(payUser)
 
-    return (
-        <div className="mt-5 space-y-5">
-            <Helmet>
-                <title>Payment Request</title>
-            </Helmet>
-            <div className="border p-5 rounded-lg">
-            <div className="overflow-x-auto">
+  return (
+    <div className="mt-5  space-y-5">
+      <Helmet>
+        <title>Payment Request</title>
+      </Helmet>
+      <div className="border dark:border-[#4B5563] p-5 rounded-lg">
+        <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
-            <thead className="bg-[#EBD9FF] text-[#7201FF] p-[1px]">
+            <thead className="bg-[#EBD9FF]  dark:bg-[#8F03FF] dark:text-white text-[#7201FF] p-[1px]">
               <tr>
                 <th>No</th>
                 <th>Name</th>
@@ -46,15 +48,18 @@ const PaymentRequest = () => {
             <tbody>
               {/* row 1 */}
               {payUser.map((el, idx) => (
-                <PaymentHistoryRow key={el?._id} idx={idx} el={el} />
+                <PaymentHistoryRow
+                  key={el?._id}
+                  idx={idx}
+                  el={el}
+                />
               ))}
             </tbody>
           </table>
         </div>
-    
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default PaymentRequest;

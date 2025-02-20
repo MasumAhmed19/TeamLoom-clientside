@@ -10,7 +10,7 @@ const ProgressTableRow = ({ el, idx }) => {
   const formateDate = parsedDate && format(parsedDate, 'dd/MM/yyyy');
 
   return (
-    <tr className="hover:bg-purple-50 transition-all duration-200">
+    <tr className="hover:bg-purple-50 dark:hover:bg-black transition-all duration-200 dark:border-[#4B5563]">
       <td>{idx + 1}</td>
 
       <td>

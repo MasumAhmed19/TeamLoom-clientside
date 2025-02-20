@@ -11,11 +11,9 @@ import { format } from "date-fns";
 import useEmployeeDet from "../../../../../hooks/useEmployeeDet";
 import useAxiosSecure from "../../../../../hooks/useAxiosSecure";
 
-
-
 const Task = () => {
   const { user } = useAuth();
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
 
   const [startDate, setStartDate] = useState(new Date());
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -25,11 +23,16 @@ const Task = () => {
 
   // console.log(userData.isVerified)
 
-
-  const { data: tasks = [], isLoading, refetch } = useQuery({
+  const {
+    data: tasks = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["tasks", user?.email],
     queryFn: async () => {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/tasks/${user?.email}`);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/tasks/${user?.email}`
+      );
       return res.data;
     },
   });
@@ -43,15 +46,25 @@ const Task = () => {
     const hoursWorked = parseInt(form.hoursWorked.value);
     const date = format(startDate, "dd-MM-yyyy, hh:mma");
     const status = "Processing";
-    const taskData = { employeeName, employeeEmail, task, hoursWorked, date, status };
+    const taskData = {
+      employeeName,
+      employeeEmail,
+      task,
+      hoursWorked,
+      date,
+      status,
+    };
 
-    if(!userData.isVerified){
-      toast.warn('Please wait till HR verify you')
-      return
+    if (!userData.isVerified) {
+      toast.warn("Please wait till HR verify you");
+      return;
     }
 
     try {
-      const result = await axios.post(`${import.meta.env.VITE_API_URL}/add-task`, taskData);
+      const result = await axios.post(
+        `${import.meta.env.VITE_API_URL}/add-task`,
+        taskData
+      );
       if (result.data.acknowledged) {
         refetch();
         toast.success("Added your task");
@@ -63,19 +76,19 @@ const Task = () => {
   };
 
   const handleDelete = async () => {
+    try {
+      const result = await axios.delete(
+        `${import.meta.env.VITE_API_URL}/delete-task/${currentTask?._id}`
+      );
 
-    try{
-      const result = await axios.delete(`${import.meta.env.VITE_API_URL}/delete-task/${currentTask?._id}`);
-
-      if(result){
-        toast.success('Task Deleted');
+      if (result) {
+        toast.success("Task Deleted");
         refetch();
-        setIsDeleteModalOpen(false)
+        setIsDeleteModalOpen(false);
       }
-    }catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
-    
   };
 
   const handleEdit = async (e) => {
@@ -86,57 +99,113 @@ const Task = () => {
     const updatedHours = parseInt(form.hoursWorked.value);
     const newDate = format(startDate, "dd-MM-yyyy, hh:mma");
 
-    const updateData={
+    const updateData = {
       updatedTask,
       updatedHours,
-      newDate
-    }
+      newDate,
+    };
 
-    try{
-
-      const result = await axios.put(`${import.meta.env.VITE_API_URL}/update-task/${currentTask?._id}`, updateData)
-      if(result.data.acknowledged){
-        toast.success('Task updated')
-        setIsEditModalOpen(false)
+    try {
+      const result = await axios.put(
+        `${import.meta.env.VITE_API_URL}/update-task/${currentTask?._id}`,
+        updateData
+      );
+      if (result.data.acknowledged) {
+        toast.success("Task updated");
+        setIsEditModalOpen(false);
         refetch();
       }
-
-    }catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
   };
 
   return (
     <div className="mt-5 space-y-5">
-      <div className="border p-5 rounded-lg flex flex-col gap-5">
+      <div className="border dark:border-[#4B5563] p-5 rounded-lg flex flex-col gap-5">
         {/* Add Task */}
-        <div className="bg-slate-100 py-10 p-5 rounded-md">
+        {/* Add Task */}
+        <div className="bg-slate-100 dark:bg-gray-800 py-10 p-5 rounded-md">
           <div className="flex flex-col gap-5 items-center py-[40px]">
-            <h2 className="text-center text-4xl">Add task</h2>
-            <form className="space-y-4 md:w-3/5" onSubmit={handleAddTask}>
+            <h2 className="text-center text-4xl text-gray-900 dark:text-gray-100">
+              Add task
+            </h2>
+            <form
+              className="space-y-4 md:w-3/5"
+              onSubmit={handleAddTask}
+            >
               <div className="form-control">
-                <select defaultValue="default" className="select select-bordered w-full" name="task">
-                  <option disabled value="default">Task on</option>
-                  <option value="Sales">Sales</option>
-                  <option value="Support">Support</option>
-                  <option value="Content">Content</option>
-                  <option value="Paper-work">Paper-work</option>
+                <select
+                  defaultValue="default"
+                  className="select select-bordered w-full bg-white text-gray-900 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"
+                  name="task"
+                >
+                  <option
+                    disabled
+                    value="default"
+                    className="dark:bg-gray-700"
+                  >
+                    Task on
+                  </option>
+                  <option
+                    value="Sales"
+                    className="dark:bg-gray-700"
+                  >
+                    Sales
+                  </option>
+                  <option
+                    value="Support"
+                    className="dark:bg-gray-700"
+                  >
+                    Support
+                  </option>
+                  <option
+                    value="Content"
+                    className="dark:bg-gray-700"
+                  >
+                    Content
+                  </option>
+                  <option
+                    value="Paper-work"
+                    className="dark:bg-gray-700"
+                  >
+                    Paper-work
+                  </option>
                 </select>
               </div>
               <div className="flex items-center gap-2">
                 <div className="form-control w-full">
-                  <input type="text" name="hoursWorked" placeholder="Hours Worked" className="input input-bordered w-full px-4 py-2 border rounded-md" required />
+                  <input
+                    type="text"
+                    name="hoursWorked"
+                    placeholder="Hours Worked"
+                    className="input input-bordered w-full px-4 py-2 border rounded-md bg-white text-gray-900 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"
+                    required
+                  />
                 </div>
                 <div className="form-control w-full">
-                  <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}  className="select-bordered py-3 rounded-md w-full" />
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    className="select-bordered py-3 rounded-md w-full bg-white text-gray-900 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600"
+                  />
                 </div>
               </div>
-              {
-                 userData?.isVerified ? <button type="submit" className="btn2">Add task</button> :
-                 <button type="submit" className="btn3">Add task</button> 
-                
-              }
-              
+              {userData?.isVerified ? (
+                <button
+                  type="submit"
+                  className="btn2 bg-indigo-500 text-white dark:bg-[#8F03FF]"
+                >
+                  Add task
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className="btn3 bg-red-500 text-white dark:bg-red-600 dark:hover:bg-red-500"
+                >
+                  Add task
+                </button>
+              )}
             </form>
           </div>
         </div>
@@ -144,7 +213,7 @@ const Task = () => {
         {/* List Tasks */}
         <div className="overflow-x-auto">
           <table className="table">
-            <thead>
+            <thead className="bg-[#EBD9FF] dark:bg-[#8F03FF] dark:text-white text-[#7201FF] p-[1px]">
               <tr>
                 <th>No.</th>
                 <th>Tasks</th>
@@ -157,18 +226,30 @@ const Task = () => {
             </thead>
             <tbody>
               {/* // <TaskRow key={el?._id} el={el} idx={idx} /> */}
-              
+
               {tasks.map((el, idx) => (
-                <tr key={el?._id}>
+                <tr key={el?._id} className="hover:bg-purple-50 dark:hover:bg-black transition-all duration-200 dark:border-[#4B5563]">
                   <th>{idx + 1}</th>
                   <td>{el?.task}</td>
                   <td>{el?.hoursWorked}</td>
                   <td>{el?.date}</td>
                   <td>{el?.status}</td>
-                  <td onClick={() => {setIsDeleteModalOpen(true); setCurrentTask(el)}} className="text-lg cursor-pointer">
+                  <td
+                    onClick={() => {
+                      setIsDeleteModalOpen(true);
+                      setCurrentTask(el);
+                    }}
+                    className="text-lg cursor-pointer"
+                  >
                     <MdDelete />
                   </td>
-                  <td onClick={() => { setCurrentTask(el); setIsEditModalOpen(true); }} className="text-lg cursor-pointer">
+                  <td
+                    onClick={() => {
+                      setCurrentTask(el);
+                      setIsEditModalOpen(true);
+                    }}
+                    className="text-lg cursor-pointer"
+                  >
                     <MdEdit />
                   </td>
                 </tr>
@@ -179,23 +260,47 @@ const Task = () => {
       </div>
 
       {/* Delete Modal */}
-      <PopModal isOpen={isDeleteModalOpen} closeModal={() => setIsDeleteModalOpen(false)} title="Confirm Delete">
+      <PopModal
+        isOpen={isDeleteModalOpen}
+        closeModal={() => setIsDeleteModalOpen(false)}
+        title="Confirm Delete"
+      >
         <p>Are you sure you want to delete this task?</p>
-        <button onClick={handleDelete} className="btn-danger mt-4 bg-red-300">Delete</button>
+        <button
+          onClick={handleDelete}
+          className="btn-danger mt-4 bg-[#8F03FF] text-white px-2 py-1 rounded-md"
+        >
+          Delete
+        </button>
       </PopModal>
 
       {/* Edit Modal */}
-      <PopModal isOpen={isEditModalOpen} closeModal={() => setIsEditModalOpen(false)} title="Edit Task">
-        <form onSubmit={handleEdit} className="space-y-4">
+      <PopModal
+        isOpen={isEditModalOpen}
+        closeModal={() => setIsEditModalOpen(false)}
+        title="Edit Task"
+      >
+        <form
+          onSubmit={handleEdit}
+          className="space-y-4"
+        >
           <div className="form-control">
-
-            <select defaultValue={currentTask?.task}className="select select-bordered w-full" name="task">
-                  <option disabled value="default">Task on</option>
-                  <option value="Sales">Sales</option>
-                  <option value="Support">Support</option>
-                  <option value="Content">Content</option>
-                  <option value="Paper-work">Paper-work</option>
-              </select>
+            <select
+              defaultValue={currentTask?.task}
+              className="select select-bordered w-full"
+              name="task"
+            >
+              <option
+                disabled
+                value="default"
+              >
+                Task on
+              </option>
+              <option value="Sales">Sales</option>
+              <option value="Support">Support</option>
+              <option value="Content">Content</option>
+              <option value="Paper-work">Paper-work</option>
+            </select>
           </div>
           <div className="form-control">
             <input
@@ -214,7 +319,12 @@ const Task = () => {
               className="select-bordered py-3 rounded-md w-full"
             />
           </div>
-          <button type="submit" className="btn2">Update Task</button>
+          <button
+            type="submit"
+            className="btn2"
+          >
+            Update Task
+          </button>
         </form>
       </PopModal>
     </div>

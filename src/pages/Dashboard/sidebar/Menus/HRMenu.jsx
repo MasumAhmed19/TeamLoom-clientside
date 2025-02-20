@@ -21,7 +21,7 @@ const HRmenu = ({ onClose }) => {
             onClick={onClose}
             className="flex items-center gap-2 text-sm p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition duration-200"
           >
-            <span className="text-base text-[#7250FF]">{item.icon}</span>
+            <span className="text-base text-[#7250FF] dark:text-white">{item.icon}</span>
             {item.name}
           </NavLink>
         </li>

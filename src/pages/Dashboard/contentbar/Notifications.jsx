@@ -6,7 +6,7 @@ const Notifications = () => {
             <Helmet>
                 <title>Notifications</title>
             </Helmet>
-            <div className="border p-5 rounded-lg">
+            <div className="border dark:border-[#4B5563] p-5 rounded-lg">
                 You don't have any messages yet
             </div>
         </div>

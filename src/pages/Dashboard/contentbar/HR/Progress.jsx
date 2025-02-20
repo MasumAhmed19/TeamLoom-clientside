@@ -35,64 +35,63 @@ const Progress = () => {
         <title>Progress Report</title>
       </Helmet>
 
-      <div className="border p-5 rounded-lg space-y-7">
+      <div className="border dark:border-[#4B5563] p-5 rounded-lg space-y-7">
         {/* Form and selector  */}
         <div>
           {/* Form and Selector */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                {/* Employee Name Input */}
-                <div>
-                <input
-                    type="text"
-                    name="employeeName"
-                    placeholder="Search by employee name"
-                    className="input input-bordered w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                    onChange={(e) => setName(e.target.value)}
-                    aria-label="Search by employee name"
-                />
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+  {/* Employee Name Input */}
+  <div>
+    <input
+      type="text"
+      name="employeeName"
+      placeholder="Search by employee name"
+      className="input input-bordered w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
+      onChange={(e) => setName(e.target.value)}
+      aria-label="Search by employee name"
+    />
+  </div>
 
-                {/* Month Selector */}
-                <div>
-                <select
-                    defaultValue=""
-                    className="select select-bordered w-full"
-                    name="month"
-                    onChange={(e) =>setMonth(e.target.value)} 
-                    aria-label="Filter by month"
-                >
-                    <option
-                    value=""
-                    >
-                    Select a month
-                    </option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
-                </div>
+  {/* Month Selector */}
+  <div>
+    <select
+      defaultValue=""
+      className="select select-bordered w-full bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-600"
+      name="month"
+      onChange={(e) => setMonth(e.target.value)}
+      aria-label="Filter by month"
+    >
+      <option value="" className="dark:bg-gray-800">
+        Select a month
+      </option>
+      <option value="1" className="dark:bg-gray-800">January</option>
+      <option value="2" className="dark:bg-gray-800">February</option>
+      <option value="3" className="dark:bg-gray-800">March</option>
+      <option value="4" className="dark:bg-gray-800">April</option>
+      <option value="5" className="dark:bg-gray-800">May</option>
+      <option value="6" className="dark:bg-gray-800">June</option>
+      <option value="7" className="dark:bg-gray-800">July</option>
+      <option value="8" className="dark:bg-gray-800">August</option>
+      <option value="9" className="dark:bg-gray-800">September</option>
+      <option value="10" className="dark:bg-gray-800">October</option>
+      <option value="11" className="dark:bg-gray-800">November</option>
+      <option value="12" className="dark:bg-gray-800">December</option>
+    </select>
+  </div>
 
-                {/* Year Input */}
-                <div>
-                <input
-                    type="number"
-                    name="year"
-                    placeholder="Search by year"
-                    className="input input-bordered w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                    onChange={(e) =>setYear(e.target.value)} 
-                    aria-label="Search by year"
-                />
-                </div>
-            </div>
+  {/* Year Input */}
+  <div>
+    <input
+      type="number"
+      name="year"
+      placeholder="Search by year"
+      className="input input-bordered w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
+      onChange={(e) => setYear(e.target.value)}
+      aria-label="Search by year"
+    />
+  </div>
+</div>
+
           
         </div>
 
@@ -100,7 +99,7 @@ const Progress = () => {
 
         <table className="table">
           {/* head */}
-          <thead className="bg-[#EBD9FF] text-[#7201FF] p-[1px]">
+          <thead className="bg-[#EBD9FF]  dark:bg-[#8F03FF] dark:text-white text-[#7201FF] p-[1px]">
             <tr>
               <th>No</th>
               <th>Name</th>

@@ -123,7 +123,7 @@ const EmployeeListTableAdmin = () => {
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
-            <thead className="bg-[#EBD9FF] text-[#7201FF] p-[1px]">
+            <thead className="bg-[#EBD9FF] dark:bg-[#8F03FF] dark:text-white text-[#7201FF] p-[1px]">
               <tr>
                 <th>No</th>
                 <th>Name</th>
